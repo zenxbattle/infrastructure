@@ -8,7 +8,7 @@ terraform + gitops on EKS. learning playground.
 - [x] bootstrap — migrate state to S3
 - [x] core — VPC (private, public, intra subnets)
 - [x] core — hosted zone `sandbox-liju.internal`
-- [ ] eks — EKS cluster with core-controllers node
+- [x] eks — EKS cluster with core-controllers node
 - [ ] eks — karpenter + EC2NodeClass
 - [ ] eks — argoCD + AppProject + metaapp
 - [ ] eks — pod identities (aws-lbc, external-dns, cert-manager)

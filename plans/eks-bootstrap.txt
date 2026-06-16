@@ -1,0 +1,1317 @@
+data.aws_vpc.selected: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.data.aws_partition.current[0]: Reading...
+data.aws_caller_identity.current: Reading...
+module.eks.module.kms.data.aws_caller_identity.current[0]: Reading...
+module.eks.module.kms.data.aws_partition.current[0]: Reading...
+module.eks.data.aws_caller_identity.current[0]: Reading...
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.eks.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2830595799]
+module.eks.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.eks.data.aws_iam_session_context.current[0]: Reading...
+data.aws_caller_identity.current: Read complete after 1s [id=056562102950]
+module.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 1s [id=056562102950]
+data.aws_vpc.selected: Read complete after 1s [id=vpc-0cb1b3db3e0108fdd]
+data.aws_subnets.private: Reading...
+data.aws_subnets.private: Read complete after 0s [id=ap-south-1]
+module.eks.data.aws_iam_session_context.current[0]: Read complete after 1s [id=arn:aws:sts::056562102950:assumed-role/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15/liju_aion]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_ssm_parameter.ami[0]: Reading...
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_ssm_parameter.ami[0]: Read complete after 1s [id=/aws/service/eks/optimized-ami/1.33/amazon-linux-2023/arm64/standard/recommended/release_version]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "aws-ebs-csi-driver"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.33"
+      + most_recent        = true
+      + region             = (known after apply)
+      + version            = (known after apply)
+    }
+
+  # module.eks.data.aws_eks_addon_version.this["coredns"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "coredns"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.33"
+      + most_recent        = true
+      + region             = (known after apply)
+      + version            = (known after apply)
+    }
+
+  # module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "eks-pod-identity-agent"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.33"
+      + most_recent        = true
+      + region             = (known after apply)
+      + version            = (known after apply)
+    }
+
+  # module.eks.data.aws_eks_addon_version.this["kube-proxy"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "kube-proxy"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.33"
+      + most_recent        = true
+      + region             = (known after apply)
+      + version            = (known after apply)
+    }
+
+  # module.eks.data.aws_eks_addon_version.this["vpc-cni"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "vpc-cni"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.33"
+      + most_recent        = true
+      + region             = (known after apply)
+      + version            = (known after apply)
+    }
+
+  # module.eks.data.tls_certificate.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "tls_certificate" "this" {
+      + certificates = (known after apply)
+      + id           = (known after apply)
+      + url          = (known after apply)
+    }
+
+  # module.eks.aws_cloudwatch_log_group.this[0] will be created
+  + resource "aws_cloudwatch_log_group" "this" {
+      + arn                         = (known after apply)
+      + deletion_protection_enabled = (known after apply)
+      + id                          = (known after apply)
+      + log_group_class             = (known after apply)
+      + name                        = "/aws/eks/sandbox-liju/cluster"
+      + name_prefix                 = (known after apply)
+      + region                      = "ap-south-1"
+      + retention_in_days           = 90
+      + skip_destroy                = false
+      + tags                        = {
+          + "Environment" = "sandbox"
+          + "Name"        = "/aws/eks/sandbox-liju/cluster"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                    = {
+          + "Environment" = "sandbox"
+          + "Name"        = "/aws/eks/sandbox-liju/cluster"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"] will be created
+  + resource "aws_ec2_tag" "cluster_primary_security_group" {
+      + id          = (known after apply)
+      + key         = "Environment"
+      + region      = "ap-south-1"
+      + resource_id = (known after apply)
+      + value       = "sandbox"
+    }
+
+  # module.eks.aws_ec2_tag.cluster_primary_security_group["Team"] will be created
+  + resource "aws_ec2_tag" "cluster_primary_security_group" {
+      + id          = (known after apply)
+      + key         = "Team"
+      + region      = "ap-south-1"
+      + resource_id = (known after apply)
+      + value       = "SRE"
+    }
+
+  # module.eks.aws_ec2_tag.cluster_primary_security_group["Terraform"] will be created
+  + resource "aws_ec2_tag" "cluster_primary_security_group" {
+      + id          = (known after apply)
+      + key         = "Terraform"
+      + region      = "ap-south-1"
+      + resource_id = (known after apply)
+      + value       = "true"
+    }
+
+  # module.eks.aws_eks_access_entry.this["sso_administrators"] will be created
+  + resource "aws_eks_access_entry" "this" {
+      + access_entry_arn  = (known after apply)
+      + cluster_name      = (known after apply)
+      + created_at        = (known after apply)
+      + id                = (known after apply)
+      + kubernetes_groups = (known after apply)
+      + modified_at       = (known after apply)
+      + principal_arn     = "arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_*"
+      + region            = "ap-south-1"
+      + tags              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all          = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + type              = "STANDARD"
+      + user_name         = (known after apply)
+    }
+
+  # module.eks.aws_eks_access_policy_association.this["sso_administrators_eksadminpolicy"] will be created
+  + resource "aws_eks_access_policy_association" "this" {
+      + associated_at = (known after apply)
+      + cluster_name  = (known after apply)
+      + id            = (known after apply)
+      + modified_at   = (known after apply)
+      + policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+      + principal_arn = "arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_*"
+      + region        = "ap-south-1"
+
+      + access_scope {
+          + type = "cluster"
+        }
+    }
+
+  # module.eks.aws_eks_addon.before_compute["eks-pod-identity-agent"] will be created
+  + resource "aws_eks_addon" "before_compute" {
+      + addon_name                  = "eks-pod-identity-agent"
+      + addon_version               = (known after apply)
+      + arn                         = (known after apply)
+      + cluster_name                = (known after apply)
+      + configuration_values        = (known after apply)
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + region                      = "ap-south-1"
+      + resolve_conflicts_on_create = "NONE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + tags                        = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                    = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+
+      + namespace_config (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.before_compute["vpc-cni"] will be created
+  + resource "aws_eks_addon" "before_compute" {
+      + addon_name                  = "vpc-cni"
+      + addon_version               = (known after apply)
+      + arn                         = (known after apply)
+      + cluster_name                = (known after apply)
+      + configuration_values        = (known after apply)
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + region                      = "ap-south-1"
+      + resolve_conflicts_on_create = "NONE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + tags                        = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                    = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+
+      + namespace_config (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.this["aws-ebs-csi-driver"] will be created
+  + resource "aws_eks_addon" "this" {
+      + addon_name                  = "aws-ebs-csi-driver"
+      + addon_version               = (known after apply)
+      + arn                         = (known after apply)
+      + cluster_name                = (known after apply)
+      + configuration_values        = jsonencode(
+            {
+              + controller = {
+                  + tolerations = [
+                      + {
+                          + effect   = "NoSchedule"
+                          + key      = "core-controllers"
+                          + operator = "Equal"
+                          + value    = "true"
+                        },
+                    ]
+                }
+            }
+        )
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + region                      = "ap-south-1"
+      + resolve_conflicts_on_create = "NONE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + tags                        = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                    = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+
+      + namespace_config (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.this["coredns"] will be created
+  + resource "aws_eks_addon" "this" {
+      + addon_name                  = "coredns"
+      + addon_version               = (known after apply)
+      + arn                         = (known after apply)
+      + cluster_name                = (known after apply)
+      + configuration_values        = jsonencode(
+            {
+              + tolerations = [
+                  + {
+                      + effect   = "NoSchedule"
+                      + key      = "core-controllers"
+                      + operator = "Equal"
+                      + value    = "true"
+                    },
+                ]
+            }
+        )
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + region                      = "ap-south-1"
+      + resolve_conflicts_on_create = "NONE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + tags                        = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                    = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+
+      + namespace_config (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.this["kube-proxy"] will be created
+  + resource "aws_eks_addon" "this" {
+      + addon_name                  = "kube-proxy"
+      + addon_version               = (known after apply)
+      + arn                         = (known after apply)
+      + cluster_name                = (known after apply)
+      + configuration_values        = (known after apply)
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + region                      = "ap-south-1"
+      + resolve_conflicts_on_create = "NONE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + tags                        = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                    = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+
+      + namespace_config (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks.aws_eks_cluster.this[0] will be created
+  + resource "aws_eks_cluster" "this" {
+      + arn                           = (known after apply)
+      + bootstrap_self_managed_addons = false
+      + certificate_authority         = (known after apply)
+      + cluster_id                    = (known after apply)
+      + created_at                    = (known after apply)
+      + deletion_protection           = (known after apply)
+      + enabled_cluster_log_types     = [
+          + "api",
+          + "audit",
+          + "authenticator",
+        ]
+      + endpoint                      = (known after apply)
+      + id                            = (known after apply)
+      + identity                      = (known after apply)
+      + name                          = "sandbox-liju"
+      + platform_version              = (known after apply)
+      + region                        = "ap-south-1"
+      + role_arn                      = (known after apply)
+      + status                        = (known after apply)
+      + tags                          = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                      = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + version                       = "1.33"
+
+      + access_config {
+          + authentication_mode                         = "API_AND_CONFIG_MAP"
+          + bootstrap_cluster_creator_admin_permissions = false
+        }
+
+      + compute_config (known after apply)
+
+      + control_plane_scaling_config (known after apply)
+
+      + encryption_config {
+          + resources = [
+              + "secrets",
+            ]
+
+          + provider {
+              + key_arn = (known after apply)
+            }
+        }
+
+      + kubernetes_network_config {
+          + ip_family         = "ipv4"
+          + service_ipv4_cidr = (known after apply)
+          + service_ipv6_cidr = (known after apply)
+
+          + elastic_load_balancing (known after apply)
+        }
+
+      + storage_config (known after apply)
+
+      + upgrade_policy (known after apply)
+
+      + vpc_config {
+          + cluster_security_group_id = (known after apply)
+          + endpoint_private_access   = true
+          + endpoint_public_access    = true
+          + public_access_cidrs       = [
+              + "0.0.0.0/0",
+            ]
+          + security_group_ids        = (known after apply)
+          + subnet_ids                = [
+              + "subnet-00bc6863ede15d545",
+              + "subnet-099e9a50bfaa065d5",
+            ]
+          + vpc_id                    = (known after apply)
+        }
+    }
+
+  # module.eks.aws_iam_openid_connect_provider.oidc_provider[0] will be created
+  + resource "aws_iam_openid_connect_provider" "oidc_provider" {
+      + arn             = (known after apply)
+      + client_id_list  = [
+          + "sts.amazonaws.com",
+        ]
+      + id              = (known after apply)
+      + tags            = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-eks-irsa"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all        = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-eks-irsa"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + thumbprint_list = (known after apply)
+      + url             = (known after apply)
+    }
+
+  # module.eks.aws_iam_policy.cluster_encryption[0] will be created
+  + resource "aws_iam_policy" "cluster_encryption" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Cluster encryption policy to allow cluster role to utilize CMK provided"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "sandbox-liju-cluster-ClusterEncryption"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.eks.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = [
+                          + "sts:TagSession",
+                          + "sts:AssumeRole",
+                        ]
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "eks.amazonaws.com"
+                        }
+                      + Sid       = "EKSClusterAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "sandbox-liju-cluster-"
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.eks.aws_iam_role_policy_attachment.cluster_encryption[0] will be created
+  + resource "aws_iam_role_policy_attachment" "cluster_encryption" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.aws_security_group.cluster[0] will be created
+  + resource "aws_security_group" "cluster" {
+      + arn                    = (known after apply)
+      + description            = "EKS cluster security group"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "sandbox-liju-cluster-"
+      + owner_id               = (known after apply)
+      + region                 = "ap-south-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-cluster"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-cluster"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                 = "vpc-0cb1b3db3e0108fdd"
+    }
+
+  # module.eks.aws_security_group.node[0] will be created
+  + resource "aws_security_group" "node" {
+      + arn                    = (known after apply)
+      + description            = "EKS node shared security group"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "sandbox-liju-node-"
+      + owner_id               = (known after apply)
+      + region                 = "ap-south-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Environment"                        = "sandbox"
+          + "Name"                               = "sandbox-liju-node"
+          + "Team"                               = "SRE"
+          + "Terraform"                          = "true"
+          + "kubernetes.io/cluster/sandbox-liju" = "owned"
+        }
+      + tags_all               = {
+          + "Environment"                        = "sandbox"
+          + "Name"                               = "sandbox-liju-node"
+          + "Team"                               = "SRE"
+          + "Terraform"                          = "true"
+          + "kubernetes.io/cluster/sandbox-liju" = "owned"
+        }
+      + vpc_id                 = "vpc-0cb1b3db3e0108fdd"
+    }
+
+  # module.eks.aws_security_group_rule.cluster["ingress_nodes_443"] will be created
+  + resource "aws_security_group_rule" "cluster" {
+      + description              = "Node groups to cluster API"
+      + from_port                = 443
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["egress_all"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + cidr_blocks              = [
+          + "0.0.0.0/0",
+        ]
+      + description              = "Allow all egress"
+      + from_port                = 0
+      + id                       = (known after apply)
+      + protocol                 = "-1"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 0
+      + type                     = "egress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 10251/tcp webhook"
+      + from_port                = 10251
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 10251
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_443"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node groups"
+      + from_port                = 443
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 4443/tcp webhook"
+      + from_port                = 4443
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 4443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 6443/tcp webhook"
+      + from_port                = 6443
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 6443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 8443/tcp webhook"
+      + from_port                = 8443
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 8443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 9443/tcp webhook"
+      + from_port                = 9443
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 9443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node kubelets"
+      + from_port                = 10250
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 10250
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Node to node ingress on ephemeral ports"
+      + from_port                = 1025
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = true
+      + source_security_group_id = (known after apply)
+      + to_port                  = 65535
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Node to node CoreDNS"
+      + from_port                = 53
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = true
+      + source_security_group_id = (known after apply)
+      + to_port                  = 53
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Node to node CoreDNS UDP"
+      + from_port                = 53
+      + id                       = (known after apply)
+      + protocol                 = "udp"
+      + region                   = "ap-south-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = true
+      + source_security_group_id = (known after apply)
+      + to_port                  = 53
+      + type                     = "ingress"
+    }
+
+  # module.eks.time_sleep.this[0] will be created
+  + resource "time_sleep" "this" {
+      + create_duration = "30s"
+      + id              = (known after apply)
+      + triggers        = {
+          + "certificate_authority_data" = (known after apply)
+          + "endpoint"                   = (known after apply)
+          + "kubernetes_version"         = "1.33"
+          + "name"                       = (known after apply)
+          + "service_cidr"               = (known after apply)
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0] will be created
+  + resource "aws_eks_node_group" "this" {
+      + ami_type               = "AL2023_ARM_64_STANDARD"
+      + arn                    = (known after apply)
+      + capacity_type          = "ON_DEMAND"
+      + cluster_name           = (known after apply)
+      + disk_size              = (known after apply)
+      + id                     = (known after apply)
+      + instance_types         = [
+          + "t4g.medium",
+        ]
+      + labels                 = {
+          + "argoproj.github.io/controller" = "true"
+          + "karpenter.sh/controller"       = "true"
+        }
+      + node_group_name        = (known after apply)
+      + node_group_name_prefix = "core-controllers-"
+      + node_role_arn          = (known after apply)
+      + region                 = "ap-south-1"
+      + release_version        = "1.33.12-20260610"
+      + resources              = (known after apply)
+      + status                 = (known after apply)
+      + subnet_ids             = [
+          + "subnet-00bc6863ede15d545",
+          + "subnet-099e9a50bfaa065d5",
+        ]
+      + tags                   = {
+          + "Environment" = "sandbox"
+          + "Name"        = "core-controllers"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "sandbox"
+          + "Name"        = "core-controllers"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + version                = "1.33"
+
+      + launch_template {
+          + id      = (known after apply)
+          + name    = (known after apply)
+          + version = (known after apply)
+        }
+
+      + node_repair_config (known after apply)
+
+      + scaling_config {
+          + desired_size = 1
+          + max_size     = 1
+          + min_size     = 1
+        }
+
+      + taint {
+          + effect = "NO_SCHEDULE"
+          + key    = "core-controllers"
+          + value  = "true"
+        }
+
+      + update_config {
+          + max_unavailable_percentage = 33
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + description           = "EKS managed node group IAM role"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "core-controllers-eks-node-group-"
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "additional" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["core-controllers"].aws_launch_template.this[0] will be created
+  + resource "aws_launch_template" "this" {
+      + arn                    = (known after apply)
+      + default_version        = (known after apply)
+      + description            = "Custom launch template for core-controllers EKS managed node group"
+      + id                     = (known after apply)
+      + latest_version         = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "core-controllers-"
+      + region                 = "ap-south-1"
+      + tags                   = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + update_default_version = true
+      + vpc_security_group_ids = (known after apply)
+        # (2 unchanged attributes hidden)
+
+      + block_device_mappings {
+          + device_name = "/dev/xvda"
+
+          + ebs {
+              + encrypted                  = "true"
+              + iops                       = (known after apply)
+              + throughput                 = (known after apply)
+              + volume_initialization_rate = (known after apply)
+              + volume_size                = (known after apply)
+              + volume_type                = (known after apply)
+            }
+        }
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = (known after apply)
+          + http_put_response_hop_limit = 2
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + tag_specifications {
+          + resource_type = "instance"
+          + tags          = {
+              + "Environment" = "sandbox"
+              + "Name"        = "core-controllers"
+              + "Team"        = "SRE"
+              + "Terraform"   = "true"
+            }
+        }
+      + tag_specifications {
+          + resource_type = "network-interface"
+          + tags          = {
+              + "Environment" = "sandbox"
+              + "Name"        = "core-controllers"
+              + "Team"        = "SRE"
+              + "Terraform"   = "true"
+            }
+        }
+      + tag_specifications {
+          + resource_type = "volume"
+          + tags          = {
+              + "Environment" = "sandbox"
+              + "Name"        = "core-controllers"
+              + "Team"        = "SRE"
+              + "Terraform"   = "true"
+            }
+        }
+    }
+
+  # module.eks.module.kms.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = []
+
+      + statement {
+          + actions   = [
+              + "kms:*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Default"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::056562102950:root",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:CancelKeyDeletion",
+              + "kms:Create*",
+              + "kms:Delete*",
+              + "kms:Describe*",
+              + "kms:Disable*",
+              + "kms:Enable*",
+              + "kms:Get*",
+              + "kms:ImportKeyMaterial",
+              + "kms:List*",
+              + "kms:Put*",
+              + "kms:ReplicateKey",
+              + "kms:Revoke*",
+              + "kms:ScheduleKeyDeletion",
+              + "kms:TagResource",
+              + "kms:UntagResource",
+              + "kms:Update*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "KeyAdministration"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:DescribeKey",
+              + "kms:Encrypt",
+              + "kms:GenerateDataKey*",
+              + "kms:ReEncrypt*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "KeyUsage"
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "AWS"
+            }
+        }
+    }
+
+  # module.eks.module.kms.aws_kms_alias.this["cluster"] will be created
+  + resource "aws_kms_alias" "this" {
+      + arn            = (known after apply)
+      + id             = (known after apply)
+      + name           = "alias/eks/sandbox-liju"
+      + name_prefix    = (known after apply)
+      + region         = "ap-south-1"
+      + target_key_arn = (known after apply)
+      + target_key_id  = (known after apply)
+    }
+
+  # module.eks.module.kms.aws_kms_key.this[0] will be created
+  + resource "aws_kms_key" "this" {
+      + arn                                = (known after apply)
+      + bypass_policy_lockout_safety_check = false
+      + customer_master_key_spec           = "SYMMETRIC_DEFAULT"
+      + description                        = "sandbox-liju cluster encryption key"
+      + enable_key_rotation                = true
+      + id                                 = (known after apply)
+      + is_enabled                         = true
+      + key_id                             = (known after apply)
+      + key_usage                          = "ENCRYPT_DECRYPT"
+      + multi_region                       = false
+      + policy                             = (known after apply)
+      + region                             = "ap-south-1"
+      + rotation_period_in_days            = (known after apply)
+      + tags                               = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                           = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["core-controllers"].module.user_data.null_resource.validate_cluster_service_cidr will be created
+  + resource "null_resource" "validate_cluster_service_cidr" {
+      + id = (known after apply)
+    }
+
+Plan: 42 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+Enter a value: yes
+
+module.eks.aws_cloudwatch_log_group.this[0]: Creating...
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role.this[0]: Creating...
+module.eks.aws_security_group.node[0]: Creating...
+module.eks.aws_iam_role.this[0]: Creating...
+module.eks.aws_security_group.cluster[0]: Creating...
+module.eks.aws_cloudwatch_log_group.this[0]: Creation complete after 0s [id=/aws/eks/sandbox-liju/cluster]
+module.eks.aws_security_group.node[0]: Creation complete after 1s [id=sg-086f0b423832e46ed]
+module.eks.aws_security_group.cluster[0]: Creation complete after 1s [id=sg-0f16cab7001e6b848]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Creating...
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Creating...
+module.eks.aws_iam_role.this[0]: Creation complete after 2s [id=sandbox-liju-cluster-20260616213400639300000003]
+module.eks.aws_security_group_rule.node["egress_all"]: Creating...
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role.this[0]: Creation complete after 2s [id=core-controllers-eks-node-group-20260616213400639300000002]
+module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Creation complete after 1s [id=sgrule-2271351111]
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Creating...
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Creation complete after 1s [id=sgrule-854235699]
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Creation complete after 1s [id=sgrule-3176043448]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Creating...
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Creation complete after 1s [id=sandbox-liju-cluster-20260616213400639300000003/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Creation complete after 2s [id=sgrule-3595473913]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Creating...
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Creation complete after 3s [id=sgrule-1310750417]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Creating...
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Creation complete after 1s [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creating...
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Creation complete after 1s [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=2016481935]
+module.eks.module.kms.aws_kms_key.this[0]: Creating...
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Creation complete after 3s [id=sgrule-420556887]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Creation complete after 0s [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 0s [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy]
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Creation complete after 4s [id=sgrule-3657416579]
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Creation complete after 4s [id=sgrule-4036959917]
+module.eks.aws_security_group_rule.node["egress_all"]: Creation complete after 4s [id=sgrule-1786046300]
+module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Creation complete after 4s [id=sgrule-3792159618]
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Creation complete after 5s [id=sgrule-2690543733]
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Creation complete after 5s [id=sgrule-2487102822]
+module.eks.module.kms.aws_kms_key.this[0]: Still creating... [00m10s elapsed]
+module.eks.module.kms.aws_kms_key.this[0]: Still creating... [00m20s elapsed]
+module.eks.module.kms.aws_kms_key.this[0]: Creation complete after 20s [id=615aa9ed-2bf6-4c9e-a774-efccfdaa2398]
+module.eks.module.kms.aws_kms_alias.this["cluster"]: Creating...
+module.eks.aws_iam_policy.cluster_encryption[0]: Creating...
+module.eks.aws_eks_cluster.this[0]: Creating...
+module.eks.module.kms.aws_kms_alias.this["cluster"]: Creation complete after 0s [id=alias/eks/sandbox-liju]
+module.eks.aws_iam_policy.cluster_encryption[0]: Creation complete after 1s [id=arn:aws:iam::056562102950:policy/sandbox-liju-cluster-ClusterEncryption20260616213425117500000005]
+module.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Creating...
+module.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Creation complete after 1s [id=sandbox-liju-cluster-20260616213400639300000003/arn:aws:iam::056562102950:policy/sandbox-liju-cluster-ClusterEncryption20260616213425117500000005]
+module.eks.aws_eks_cluster.this[0]: Still creating... [00m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [00m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [00m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [00m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [00m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [01m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [01m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [01m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [01m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [01m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [01m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [02m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [02m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [02m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [02m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [02m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [02m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [03m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [03m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [03m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [03m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [03m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [03m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [04m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [04m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [04m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [04m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [04m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [04m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [05m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [05m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [05m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [05m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [05m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [05m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [06m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [06m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [06m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [06m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [06m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [06m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [07m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [07m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [07m20s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [07m30s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [07m40s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [07m50s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [08m00s elapsed]
+module.eks.aws_eks_cluster.this[0]: Still creating... [08m10s elapsed]
+module.eks.aws_eks_cluster.this[0]: Creation complete after 8m12s [id=sandbox-liju]
+module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Reading...
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...
+module.eks.data.aws_eks_addon_version.this["coredns"]: Reading...
+module.eks.data.tls_certificate.this[0]: Reading...
+module.eks.aws_ec2_tag.cluster_primary_security_group["Terraform"]: Creating...
+module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Creating...
+module.eks.aws_ec2_tag.cluster_primary_security_group["Team"]: Creating...
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Creating...
+module.eks.time_sleep.this[0]: Creating...
+module.eks.data.tls_certificate.this[0]: Read complete after 1s [id=1e3a331631939a1ae4a625cd4244a4963dabbfa2]
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Reading...
+module.eks.aws_ec2_tag.cluster_primary_security_group["Terraform"]: Creation complete after 1s [id=sg-0bbb2fe9dbae39038,Terraform]
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Read complete after 0s [id=aws-ebs-csi-driver]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Team"]: Creation complete after 1s [id=sg-0bbb2fe9dbae39038,Team]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Creation complete after 1s [id=sg-0bbb2fe9dbae39038,Environment]
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Creating...
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 1s [id=kube-proxy]
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 1s [id=vpc-cni]
+module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Read complete after 1s [id=eks-pod-identity-agent]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 1s [id=coredns]
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Creating...
+module.eks.aws_eks_addon.before_compute["eks-pod-identity-agent"]: Creating...
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Creation complete after 1s [id=arn:aws:iam::056562102950:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/9B35D01BCB8CE67945BD06AFDA3E4199]
+module.eks.aws_eks_addon.before_compute["eks-pod-identity-agent"]: Creation complete after 8s [id=sandbox-liju:eks-pod-identity-agent]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [00m10s elapsed]
+module.eks.time_sleep.this[0]: Still creating... [00m10s elapsed]
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Still creating... [00m10s elapsed]
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Creation complete after 14s [id=sandbox-liju:vpc-cni]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [00m20s elapsed]
+module.eks.time_sleep.this[0]: Still creating... [00m20s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [00m30s elapsed]
+module.eks.time_sleep.this[0]: Still creating... [00m30s elapsed]
+module.eks.time_sleep.this[0]: Creation complete after 30s [id=2026-06-16T21:43:07Z]
+module.eks.module.eks_managed_node_group["core-controllers"].module.user_data.null_resource.validate_cluster_service_cidr: Creating...
+module.eks.module.eks_managed_node_group["core-controllers"].module.user_data.null_resource.validate_cluster_service_cidr: Creation complete after 0s [id=7092292498662972027]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_launch_template.this[0]: Creating...
+module.eks.module.eks_managed_node_group["core-controllers"].aws_launch_template.this[0]: Creation complete after 5s [id=lt-0a29463abbb12d975]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Creating...
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [00m40s elapsed]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Still creating... [00m10s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [00m50s elapsed]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Still creating... [00m20s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [01m00s elapsed]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Still creating... [00m30s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [01m10s elapsed]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Still creating... [00m40s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [01m20s elapsed]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Still creating... [00m50s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [01m30s elapsed]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Still creating... [01m00s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [01m40s elapsed]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Still creating... [01m10s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [01m50s elapsed]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Creation complete after 1m18s [id=sandbox-liju:core-controllers-2026061621431332360000000a]
+module.eks.aws_eks_addon.this["kube-proxy"]: Creating...
+module.eks.aws_eks_addon.this["coredns"]: Creating...
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Creating...
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [02m00s elapsed]
+module.eks.aws_eks_addon.this["kube-proxy"]: Still creating... [00m10s elapsed]
+module.eks.aws_eks_addon.this["coredns"]: Still creating... [00m10s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Still creating... [00m10s elapsed]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Still creating... [02m10s elapsed]
+module.eks.aws_eks_addon.this["coredns"]: Still creating... [00m20s elapsed]
+module.eks.aws_eks_addon.this["kube-proxy"]: Still creating... [00m20s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Still creating... [00m20s elapsed]
+module.eks.aws_eks_addon.this["kube-proxy"]: Creation complete after 25s [id=sandbox-liju:kube-proxy]
+module.eks.aws_eks_addon.this["coredns"]: Still creating... [00m30s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Still creating... [00m30s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Still creating... [00m40s elapsed]
+module.eks.aws_eks_addon.this["coredns"]: Still creating... [00m40s elapsed]
+module.eks.aws_eks_addon.this["coredns"]: Still creating... [00m50s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Still creating... [00m50s elapsed]
+module.eks.aws_eks_addon.this["coredns"]: Creation complete after 55s [id=sandbox-liju:coredns]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Still creating... [01m00s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Creation complete after 1m5s [id=sandbox-liju:aws-ebs-csi-driver]
+odule.eks.aws_eks_access_entry.this["sso_administrators"]: Creating...
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Creation complete after 1s [id=sandbox-liju:arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15]
+module.eks.aws_eks_access_policy_association.this["sso_administrators_eksadminpolicy"]: Creating...
+module.eks.aws_eks_access_policy_association.this["sso_administrators_eksadminpolicy"]: Creation complete after 0s [id=sandbox-liju#arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
