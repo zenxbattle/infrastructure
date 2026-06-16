@@ -1,0 +1,88 @@
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0cb1b3db3e0108fdd]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-07769f67436dc369f]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-06bfa16c145ecaf8f]
+module.vpc.aws_subnet.intra[1]: Refreshing state... [id=subnet-014d7060d84842ae7]
+module.vpc.aws_subnet.intra[0]: Refreshing state... [id=subnet-0000fef52956ed469]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-05323b1d931769d53]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0cc166de769fb76cf]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-02c1a1386688fcbe4]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-00af71fa545ce89bb]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-090bb3d27cc816761]
+module.vpc.aws_route_table.intra[0]: Refreshing state... [id=rtb-0beafe8dfb64342ab]
+module.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-00bc6863ede15d545]
+module.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-099e9a50bfaa065d5]
+module.vpc.aws_route_table.private[1]: Refreshing state... [id=rtb-0ff66744f2eb44a24]
+module.vpc.aws_route_table.private[0]: Refreshing state... [id=rtb-073fce3debd8bbaf3]
+module.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-021a4e350d11ddf15]
+module.vpc.aws_eip.nat[1]: Refreshing state... [id=eipalloc-0a994c7ead4f5a838]
+module.vpc.aws_route_table_association.intra[0]: Refreshing state... [id=rtbassoc-05d6cd38991912634]
+module.vpc.aws_route_table_association.intra[1]: Refreshing state... [id=rtbassoc-058a24f8be6b40ff6]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-03678e1569055aac2]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-040791992c1268f94]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-090bb3d27cc8167611080289494]
+module.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0be65897f40df404e]
+module.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0529b4b3244b333ed]
+module.vpc.aws_nat_gateway.this[1]: Refreshing state... [id=nat-05fcfd662e0b64e0b]
+module.vpc.aws_nat_gateway.this[0]: Refreshing state... [id=nat-011c2c47736877cdd]
+module.vpc.aws_route.private_nat_gateway[1]: Refreshing state... [id=r-rtb-0ff66744f2eb44a241080289494]
+module.vpc.aws_route.private_nat_gateway[0]: Refreshing state... [id=r-rtb-073fce3debd8bbaf31080289494]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_route53_zone.sandbox_liju_internal will be created
+  + resource "aws_route53_zone" "sandbox_liju_internal" {
+      + arn                         = (known after apply)
+      + comment                     = "Managed by Terraform"
+      + enable_accelerated_recovery = (known after apply)
+      + force_destroy               = false
+      + id                          = (known after apply)
+      + name                        = "sandbox-liju.internal"
+      + name_servers                = (known after apply)
+      + primary_name_server         = (known after apply)
+      + tags_all                    = (known after apply)
+      + zone_id                     = (known after apply)
+
+      + vpc {
+          + vpc_id     = "vpc-0cb1b3db3e0108fdd"
+          + vpc_region = (known after apply)
+        }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_route53_zone.sandbox_liju_internal: Creating...
+aws_route53_zone.sandbox_liju_internal: Still creating... [00m10s elapsed]
+aws_route53_zone.sandbox_liju_internal: Still creating... [00m20s elapsed]
+aws_route53_zone.sandbox_liju_internal: Still creating... [00m30s elapsed]
+aws_route53_zone.sandbox_liju_internal: Still creating... [00m40s elapsed]
+aws_route53_zone.sandbox_liju_internal: Still creating... [00m50s elapsed]
+aws_route53_zone.sandbox_liju_internal: Still creating... [01m00s elapsed]
+aws_route53_zone.sandbox_liju_internal: Still creating... [01m10s elapsed]
+aws_route53_zone.sandbox_liju_internal: Creation complete after 1m19s [id=Z0080474WUGHDW1MOR4R]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+intra_subnet_ids = [
+  "subnet-0000fef52956ed469",
+  "subnet-014d7060d84842ae7",
+]
+private_subnet_ids = [
+  "subnet-00bc6863ede15d545",
+  "subnet-099e9a50bfaa065d5",
+]
+public_subnet_ids = [
+  "subnet-02c1a1386688fcbe4",
+  "subnet-05323b1d931769d53",
+]
+vpc_id = "vpc-0cb1b3db3e0108fdd"
