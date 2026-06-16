@@ -1,0 +1,847 @@
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.vpc.aws_default_network_acl.this[0] will be created
+  + resource "aws_default_network_acl" "this" {
+      + arn                    = (known after apply)
+      + default_network_acl_id = (known after apply)
+      + id                     = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "ap-south-1"
+      + tags                   = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-default"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-default"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                 = (known after apply)
+
+      + egress {
+          + action          = "allow"
+          + from_port       = 0
+          + ipv6_cidr_block = "::/0"
+          + protocol        = "-1"
+          + rule_no         = 101
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+      + egress {
+          + action          = "allow"
+          + cidr_block      = "0.0.0.0/0"
+          + from_port       = 0
+          + protocol        = "-1"
+          + rule_no         = 100
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+
+      + ingress {
+          + action          = "allow"
+          + from_port       = 0
+          + ipv6_cidr_block = "::/0"
+          + protocol        = "-1"
+          + rule_no         = 101
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+      + ingress {
+          + action          = "allow"
+          + cidr_block      = "0.0.0.0/0"
+          + from_port       = 0
+          + protocol        = "-1"
+          + rule_no         = 100
+          + to_port         = 0
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.vpc.aws_default_route_table.default[0] will be created
+  + resource "aws_default_route_table" "default" {
+      + arn                    = (known after apply)
+      + default_route_table_id = (known after apply)
+      + id                     = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "ap-south-1"
+      + route                  = (known after apply)
+      + tags                   = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-default"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-default"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                 = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+          + update = "5m"
+        }
+    }
+
+  # module.vpc.aws_default_security_group.this[0] will be created
+  + resource "aws_default_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = (known after apply)
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + region                 = "ap-south-1"
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-default"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all               = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-default"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.vpc.aws_eip.nat[0] will be created
+  + resource "aws_eip" "nat" {
+      + allocation_id        = (known after apply)
+      + arn                  = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = "vpc"
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + ipam_pool_id         = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + ptr_record           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + region               = "ap-south-1"
+      + tags                 = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-ap-south-1a"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all             = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-ap-south-1a"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.vpc.aws_eip.nat[1] will be created
+  + resource "aws_eip" "nat" {
+      + allocation_id        = (known after apply)
+      + arn                  = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = "vpc"
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + ipam_pool_id         = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + ptr_record           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + region               = "ap-south-1"
+      + tags                 = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-ap-south-1b"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all             = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-ap-south-1b"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.vpc.aws_internet_gateway.this[0] will be created
+  + resource "aws_internet_gateway" "this" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + region   = "ap-south-1"
+      + tags     = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # module.vpc.aws_nat_gateway.this[0] will be created
+  + resource "aws_nat_gateway" "this" {
+      + allocation_id                      = (known after apply)
+      + association_id                     = (known after apply)
+      + auto_provision_zones               = (known after apply)
+      + auto_scaling_ips                   = (known after apply)
+      + availability_mode                  = (known after apply)
+      + connectivity_type                  = "public"
+      + id                                 = (known after apply)
+      + network_interface_id               = (known after apply)
+      + private_ip                         = (known after apply)
+      + public_ip                          = (known after apply)
+      + region                             = "ap-south-1"
+      + regional_nat_gateway_address       = (known after apply)
+      + regional_nat_gateway_auto_mode     = (known after apply)
+      + route_table_id                     = (known after apply)
+      + secondary_allocation_ids           = (known after apply)
+      + secondary_private_ip_address_count = (known after apply)
+      + secondary_private_ip_addresses     = (known after apply)
+      + subnet_id                          = (known after apply)
+      + tags                               = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-ap-south-1a"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                           = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-ap-south-1a"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                             = (known after apply)
+    }
+
+  # module.vpc.aws_nat_gateway.this[1] will be created
+  + resource "aws_nat_gateway" "this" {
+      + allocation_id                      = (known after apply)
+      + association_id                     = (known after apply)
+      + auto_provision_zones               = (known after apply)
+      + auto_scaling_ips                   = (known after apply)
+      + availability_mode                  = (known after apply)
+      + connectivity_type                  = "public"
+      + id                                 = (known after apply)
+      + network_interface_id               = (known after apply)
+      + private_ip                         = (known after apply)
+      + public_ip                          = (known after apply)
+      + region                             = "ap-south-1"
+      + regional_nat_gateway_address       = (known after apply)
+      + regional_nat_gateway_auto_mode     = (known after apply)
+      + route_table_id                     = (known after apply)
+      + secondary_allocation_ids           = (known after apply)
+      + secondary_private_ip_address_count = (known after apply)
+      + secondary_private_ip_addresses     = (known after apply)
+      + subnet_id                          = (known after apply)
+      + tags                               = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-ap-south-1b"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                           = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-ap-south-1b"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id                             = (known after apply)
+    }
+
+  # module.vpc.aws_route.private_nat_gateway[0] will be created
+  + resource "aws_route" "private_nat_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + nat_gateway_id         = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + region                 = "ap-south-1"
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route.private_nat_gateway[1] will be created
+  + resource "aws_route" "private_nat_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + nat_gateway_id         = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + region                 = "ap-south-1"
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be created
+  + resource "aws_route" "public_internet_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + region                 = "ap-south-1"
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route_table.intra[0] will be created
+  + resource "aws_route_table" "intra" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "ap-south-1"
+      + route            = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-intra"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-intra"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.private[0] will be created
+  + resource "aws_route_table" "private" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "ap-south-1"
+      + route            = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-private-ap-south-1a"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-private-ap-south-1a"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.private[1] will be created
+  + resource "aws_route_table" "private" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "ap-south-1"
+      + route            = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-private-ap-south-1b"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-private-ap-south-1b"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.public[0] will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + region           = "ap-south-1"
+      + route            = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-public"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-public"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.intra[0] will be created
+  + resource "aws_route_table_association" "intra" {
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.intra[1] will be created
+  + resource "aws_route_table_association" "intra" {
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.private[0] will be created
+  + resource "aws_route_table_association" "private" {
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.private[1] will be created
+  + resource "aws_route_table_association" "private" {
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[1] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.intra[0] will be created
+  + resource "aws_subnet" "intra" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-south-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.5.128.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "ap-south-1"
+      + tags                                           = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-intra-ap-south-1a"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+          + "elasticache" = "1"
+          + "rds"         = "1"
+        }
+      + tags_all                                       = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-intra-ap-south-1a"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+          + "elasticache" = "1"
+          + "rds"         = "1"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.intra[1] will be created
+  + resource "aws_subnet" "intra" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-south-1b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.5.129.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "ap-south-1"
+      + tags                                           = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-intra-ap-south-1b"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+          + "elasticache" = "1"
+          + "rds"         = "1"
+        }
+      + tags_all                                       = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju-intra-ap-south-1b"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+          + "elasticache" = "1"
+          + "rds"         = "1"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.private[0] will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-south-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.5.0.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "ap-south-1"
+      + tags                                           = {
+          + "Environment"                        = "sandbox"
+          + "Name"                               = "sandbox-liju-private-ap-south-1a"
+          + "Team"                               = "SRE"
+          + "Terraform"                          = "true"
+          + "kubernetes.io/cluster/sandbox-liju" = "shared"
+          + "kubernetes.io/role/internal-elb"    = "1"
+          + "private"                            = "1"
+        }
+      + tags_all                                       = {
+          + "Environment"                        = "sandbox"
+          + "Name"                               = "sandbox-liju-private-ap-south-1a"
+          + "Team"                               = "SRE"
+          + "Terraform"                          = "true"
+          + "kubernetes.io/cluster/sandbox-liju" = "shared"
+          + "kubernetes.io/role/internal-elb"    = "1"
+          + "private"                            = "1"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.private[1] will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-south-1b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.5.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "ap-south-1"
+      + tags                                           = {
+          + "Environment"                        = "sandbox"
+          + "Name"                               = "sandbox-liju-private-ap-south-1b"
+          + "Team"                               = "SRE"
+          + "Terraform"                          = "true"
+          + "kubernetes.io/cluster/sandbox-liju" = "shared"
+          + "kubernetes.io/role/internal-elb"    = "1"
+          + "private"                            = "1"
+        }
+      + tags_all                                       = {
+          + "Environment"                        = "sandbox"
+          + "Name"                               = "sandbox-liju-private-ap-south-1b"
+          + "Team"                               = "SRE"
+          + "Terraform"                          = "true"
+          + "kubernetes.io/cluster/sandbox-liju" = "shared"
+          + "kubernetes.io/role/internal-elb"    = "1"
+          + "private"                            = "1"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-south-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.5.64.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "ap-south-1"
+      + tags                                           = {
+          + "Environment"            = "sandbox"
+          + "Name"                   = "sandbox-liju-public-ap-south-1a"
+          + "Team"                   = "SRE"
+          + "Terraform"              = "true"
+          + "kubernetes.io/role/elb" = "1"
+          + "public"                 = "1"
+        }
+      + tags_all                                       = {
+          + "Environment"            = "sandbox"
+          + "Name"                   = "sandbox-liju-public-ap-south-1a"
+          + "Team"                   = "SRE"
+          + "Terraform"              = "true"
+          + "kubernetes.io/role/elb" = "1"
+          + "public"                 = "1"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[1] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "ap-south-1b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.5.65.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block                                = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + region                                         = "ap-south-1"
+      + tags                                           = {
+          + "Environment"            = "sandbox"
+          + "Name"                   = "sandbox-liju-public-ap-south-1b"
+          + "Team"                   = "SRE"
+          + "Terraform"              = "true"
+          + "kubernetes.io/role/elb" = "1"
+          + "public"                 = "1"
+        }
+      + tags_all                                       = {
+          + "Environment"            = "sandbox"
+          + "Name"                   = "sandbox-liju-public-ap-south-1b"
+          + "Team"                   = "SRE"
+          + "Terraform"              = "true"
+          + "kubernetes.io/role/elb" = "1"
+          + "public"                 = "1"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_vpc.this[0] will be created
+  + resource "aws_vpc" "this" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.5.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + region                               = "ap-south-1"
+      + tags                                 = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                             = {
+          + "Environment" = "sandbox"
+          + "Name"        = "sandbox-liju"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+Plan: 28 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + intra_subnet_ids   = [
+      + (known after apply),
+      + (known after apply),
+    ]
+  + private_subnet_ids = [
+      + (known after apply),
+      + (known after apply),
+    ]
+  + public_subnet_ids  = [
+      + (known after apply),
+      + (known after apply),
+    ]
+  + vpc_id             = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+module.vpc.aws_vpc.this[0]: Creating...
+module.vpc.aws_vpc.this[0]: Creation complete after 1s [id=vpc-0cb1b3db3e0108fdd]
+module.vpc.aws_default_route_table.default[0]: Creating...
+module.vpc.aws_default_security_group.this[0]: Creating...
+module.vpc.aws_subnet.public[1]: Creating...
+module.vpc.aws_route_table.private[1]: Creating...
+module.vpc.aws_internet_gateway.this[0]: Creating...
+module.vpc.aws_route_table.private[0]: Creating...
+module.vpc.aws_default_network_acl.this[0]: Creating...
+module.vpc.aws_subnet.private[1]: Creating...
+module.vpc.aws_subnet.public[0]: Creating...
+module.vpc.aws_subnet.private[0]: Creating...
+module.vpc.aws_default_route_table.default[0]: Creation complete after 1s [id=rtb-06bfa16c145ecaf8f]
+module.vpc.aws_subnet.intra[0]: Creating...
+module.vpc.aws_internet_gateway.this[0]: Creation complete after 1s [id=igw-0cc166de769fb76cf]
+module.vpc.aws_route_table.intra[0]: Creating...
+module.vpc.aws_route_table.private[1]: Creation complete after 1s [id=rtb-0ff66744f2eb44a24]
+module.vpc.aws_subnet.intra[1]: Creating...
+module.vpc.aws_route_table.private[0]: Creation complete after 1s [id=rtb-073fce3debd8bbaf3]
+module.vpc.aws_route_table.public[0]: Creating...
+module.vpc.aws_subnet.public[0]: Creation complete after 1s [id=subnet-02c1a1386688fcbe4]
+module.vpc.aws_eip.nat[0]: Creating...
+module.vpc.aws_subnet.private[0]: Creation complete after 1s [id=subnet-00bc6863ede15d545]
+module.vpc.aws_eip.nat[1]: Creating...
+module.vpc.aws_subnet.private[1]: Creation complete after 1s [id=subnet-099e9a50bfaa065d5]
+module.vpc.aws_route_table_association.private[1]: Creating...
+module.vpc.aws_subnet.intra[0]: Creation complete after 0s [id=subnet-0000fef52956ed469]
+module.vpc.aws_route_table_association.private[0]: Creating...
+module.vpc.aws_subnet.public[1]: Creation complete after 1s [id=subnet-05323b1d931769d53]
+module.vpc.aws_route_table.intra[0]: Creation complete after 0s [id=rtb-0beafe8dfb64342ab]
+module.vpc.aws_default_network_acl.this[0]: Creation complete after 1s [id=acl-00af71fa545ce89bb]
+module.vpc.aws_route_table_association.private[1]: Creation complete after 0s [id=rtbassoc-0529b4b3244b333ed]
+module.vpc.aws_route_table.public[0]: Creation complete after 0s [id=rtb-090bb3d27cc816761]
+module.vpc.aws_route_table_association.public[0]: Creating...
+module.vpc.aws_route_table_association.public[1]: Creating...
+module.vpc.aws_route.public_internet_gateway[0]: Creating...
+module.vpc.aws_subnet.intra[1]: Creation complete after 0s [id=subnet-014d7060d84842ae7]
+module.vpc.aws_route_table_association.intra[0]: Creating...
+module.vpc.aws_route_table_association.intra[1]: Creating...
+module.vpc.aws_route_table_association.private[0]: Creation complete after 1s [id=rtbassoc-0be65897f40df404e]
+module.vpc.aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-03678e1569055aac2]
+module.vpc.aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-040791992c1268f94]
+module.vpc.aws_route_table_association.intra[0]: Creation complete after 1s [id=rtbassoc-05d6cd38991912634]
+module.vpc.aws_default_security_group.this[0]: Creation complete after 2s [id=sg-07769f67436dc369f]
+module.vpc.aws_route_table_association.intra[1]: Creation complete after 1s [id=rtbassoc-058a24f8be6b40ff6]
+module.vpc.aws_eip.nat[1]: Creation complete after 1s [id=eipalloc-0a994c7ead4f5a838]
+module.vpc.aws_eip.nat[0]: Creation complete after 1s [id=eipalloc-021a4e350d11ddf15]
+module.vpc.aws_nat_gateway.this[0]: Creating...
+module.vpc.aws_nat_gateway.this[1]: Creating...
+module.vpc.aws_route.public_internet_gateway[0]: Creation complete after 1s [id=r-rtb-090bb3d27cc8167611080289494]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m10s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m10s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m20s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m20s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m30s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m30s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m40s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m40s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m50s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m50s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [01m00s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m00s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m10s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [01m10s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [01m20s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m20s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Creation complete after 1m24s [id=nat-05fcfd662e0b64e0b]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m30s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m40s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Creation complete after 1m44s [id=nat-011c2c47736877cdd]
+module.vpc.aws_route.private_nat_gateway[1]: Creating...
+module.vpc.aws_route.private_nat_gateway[0]: Creating...
+module.vpc.aws_route.private_nat_gateway[1]: Creation complete after 1s [id=r-rtb-0ff66744f2eb44a241080289494]
+module.vpc.aws_route.private_nat_gateway[0]: Creation complete after 1s [id=r-rtb-073fce3debd8bbaf31080289494]
+
+Apply complete! Resources: 28 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+intra_subnet_ids = [
+  "subnet-0000fef52956ed469",
+  "subnet-014d7060d84842ae7",
+]
+private_subnet_ids = [
+  "subnet-00bc6863ede15d545",
+  "subnet-099e9a50bfaa065d5",
+]
+public_subnet_ids = [
+  "subnet-02c1a1386688fcbe4",
+  "subnet-05323b1d931769d53",
+]
+vpc_id = "vpc-0cb1b3db3e0108fdd"
