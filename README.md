@@ -1,6 +1,14 @@
 # sandbox-liju
 
-terraform + gitops on EKS. learning playground.
+terraform + gitops on EKS. learning playground. org: `zenxbattle`.
+
+## pools
+
+```
+core-controllers (managed, fixed 1, tainted) → karpenter, argoCD, ebs-csi, coredns
+platform-apps    (karpenter, on-demand)       → kong, cert-manager, external-dns, aws-lbc, auth, api-gateway, problems, nats
+engine           (karpenter, on-demand)       → code-exec workers
+```
 
 ## progress
 
@@ -8,19 +16,18 @@ terraform + gitops on EKS. learning playground.
 - [x] bootstrap — migrate state to S3
 - [x] core — VPC (private, public, intra subnets)
 - [x] core — hosted zone `sandbox-liju.internal`
-- [x] eks — EKS cluster with core-controllers node
-- [ ] eks — karpenter + EC2NodeClass
-- [ ] eks — argoCD + AppProject + metaapp
+- [x] eks — EKS cluster + core-controllers node
+- [x] eks — karpenter controller
+- [x] eks — argoCD install (`helm_release.argocd`)
+- [ ] eks — argoCD appproject + repo secret + metaapp
+- [ ] eks — EC2NodeClass deployment
 - [ ] eks — pod identities (aws-lbc, external-dns, cert-manager)
-- [ ] gitops — mock repo + connect argoCD
-- [ ] gitops — karpenter nodepool
-- [ ] gitops — external-secrets
-- [ ] gitops — gateway-api CRDs
-- [ ] gitops — aws-lbc
-- [ ] gitops — external-dns
-- [ ] gitops — kong-internal
-- [ ] gitops — cert-manager
-- [ ] gitops — certificate-issuers
-- [ ] gitops — gateway-resources
-- [ ] gitops — HTTPRoute for argocd
+- [ ] core — ECR repos + GitHub OIDC
+- [ ] gitops — repo + connect argoCD
+- [ ] infisical — clustersecretstore + externalsecret
+- [ ] gitops — infra apps (kong, cert-manager, external-dns, aws-lbc)
+- [ ] gitops — karpenter NodePools (platform-apps + engine)
+- [ ] gitops — platform apps (auth, api-gateway, problems, nats)
+- [ ] gitops — engine apps (code-exec)
+- [ ] gitops — HTTPRoute + gateway resources
 - [ ] verify — access argoCD

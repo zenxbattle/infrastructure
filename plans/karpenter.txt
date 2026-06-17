@@ -1,0 +1,1197 @@
+data.aws_iam_role.sso_administratoraccess: Reading...
+module.karpenter.data.aws_iam_policy_document.controller_assume_role[0]: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.data.aws_partition.current[0]: Reading...
+data.aws_caller_identity.current: Reading...
+module.karpenter.data.aws_partition.current[0]: Reading...
+module.karpenter.data.aws_region.current[0]: Reading...
+module.karpenter.data.aws_caller_identity.current[0]: Reading...
+module.eks.module.kms.data.aws_caller_identity.current[0]: Reading...
+module.eks.data.aws_caller_identity.current[0]: Reading...
+module.eks.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2830595799]
+module.karpenter.data.aws_iam_policy_document.controller_assume_role[0]: Read complete after 0s [id=148955103]
+module.karpenter.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.karpenter.data.aws_region.current[0]: Read complete after 0s [id=ap-south-1]
+module.karpenter.data.aws_service_principal.ec2[0]: Reading...
+module.eks.module.kms.data.aws_partition.current[0]: Reading...
+data.aws_vpc.selected: Reading...
+module.karpenter.data.aws_service_principal.ec2[0]: Read complete after 0s [id=ec2.ap-south-1.amazonaws.com]
+module.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.eks.aws_cloudwatch_log_group.this[0]: Refreshing state... [id=/aws/eks/sandbox-liju/cluster]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.eks.aws_iam_role.this[0]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role.this[0]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002]
+data.aws_caller_identity.current: Read complete after 0s [id=056562102950]
+module.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.eks.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.eks.data.aws_iam_session_context.current[0]: Reading...
+module.karpenter.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.karpenter.data.aws_iam_policy_document.node_assume_role[0]: Reading...
+module.karpenter.data.aws_iam_policy_document.node_assume_role[0]: Read complete after 0s [id=2560088296]
+data.aws_vpc.selected: Read complete after 0s [id=vpc-0cb1b3db3e0108fdd]
+data.aws_subnets.private: Reading...
+module.eks.aws_security_group.cluster[0]: Refreshing state... [id=sg-0f16cab7001e6b848]
+module.eks.aws_security_group.node[0]: Refreshing state... [id=sg-086f0b423832e46ed]
+data.aws_subnets.private: Read complete after 0s [id=ap-south-1]
+module.eks.aws_security_group_rule.node["egress_all"]: Refreshing state... [id=sgrule-1786046300]
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Refreshing state... [id=sgrule-2271351111]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Refreshing state... [id=sgrule-3176043448]
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Refreshing state... [id=sgrule-4036959917]
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Refreshing state... [id=sgrule-854235699]
+module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Refreshing state... [id=sgrule-3792159618]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Refreshing state... [id=sgrule-420556887]
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Refreshing state... [id=sgrule-3657416579]
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Refreshing state... [id=sgrule-1310750417]
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Refreshing state... [id=sgrule-3595473913]
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Refreshing state... [id=sgrule-2690543733]
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Refreshing state... [id=sgrule-2487102822]
+data.aws_iam_role.sso_administratoraccess: Read complete after 1s [id=AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15]
+module.eks.data.aws_iam_session_context.current[0]: Read complete after 1s [id=arn:aws:sts::056562102950:assumed-role/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15/liju_aion]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy]
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=2016481935]
+module.eks.module.kms.aws_kms_key.this[0]: Refreshing state... [id=615aa9ed-2bf6-4c9e-a774-efccfdaa2398]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy]
+module.eks.module.kms.aws_kms_alias.this["cluster"]: Refreshing state... [id=alias/eks/sandbox-liju]
+module.eks.aws_iam_policy.cluster_encryption[0]: Refreshing state... [id=arn:aws:iam::056562102950:policy/sandbox-liju-cluster-ClusterEncryption20260616213425117500000005]
+module.eks.aws_eks_cluster.this[0]: Refreshing state... [id=sandbox-liju]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Environment]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Team"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Team]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Terraform"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Terraform]
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...
+module.eks.data.aws_eks_addon_version.this["coredns"]: Reading...
+module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Reading...
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Reading...
+module.eks.data.tls_certificate.this[0]: Reading...
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Refreshing state... [id=sandbox-liju:arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15]
+module.eks.time_sleep.this[0]: Refreshing state... [id=2026-06-16T21:43:07Z]
+module.eks.module.eks_managed_node_group["core-controllers"].module.user_data.null_resource.validate_cluster_service_cidr: Refreshing state... [id=7092292498662972027]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_ssm_parameter.ami[0]: Reading...
+module.eks.data.tls_certificate.this[0]: Read complete after 0s [id=1e3a331631939a1ae4a625cd4244a4963dabbfa2]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_launch_template.this[0]: Refreshing state... [id=lt-0a29463abbb12d975]
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Refreshing state... [id=arn:aws:iam::056562102950:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/9B35D01BCB8CE67945BD06AFDA3E4199]
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Read complete after 0s [id=aws-ebs-csi-driver]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_ssm_parameter.ami[0]: Read complete after 0s [id=/aws/service/eks/optimized-ami/1.33/amazon-linux-2023/arm64/standard/recommended/release_version]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Refreshing state... [id=sandbox-liju:core-controllers-2026061621431332360000000a]
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 0s [id=kube-proxy]
+module.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003/arn:aws:iam::056562102950:policy/sandbox-liju-cluster-ClusterEncryption20260616213425117500000005]
+module.eks.aws_eks_access_policy_association.this["sso_administrators_eksadminpolicy"]: Refreshing state... [id=sandbox-liju#arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Read complete after 1s [id=eks-pod-identity-agent]
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 1s [id=vpc-cni]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 1s [id=coredns]
+module.eks.aws_eks_addon.before_compute["eks-pod-identity-agent"]: Refreshing state... [id=sandbox-liju:eks-pod-identity-agent]
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Refreshing state... [id=sandbox-liju:vpc-cni]
+module.eks.aws_eks_addon.this["coredns"]: Refreshing state... [id=sandbox-liju:coredns]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Refreshing state... [id=sandbox-liju:aws-ebs-csi-driver]
+module.eks.aws_eks_addon.this["kube-proxy"]: Refreshing state... [id=sandbox-liju:kube-proxy]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following
+symbols:
+  + create
+  ~ update in-place
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # helm_release.karpenter will be created
+  + resource "helm_release" "karpenter" {
+      + atomic                     = false
+      + chart                      = "karpenter"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "karpenter"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "oci://public.ecr.aws/karpenter"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + values                     = [
+          + <<-EOT
+                replicas: 1
+                nodeSelector:
+                  karpenter.sh/controller: 'true'
+                tolerations:
+                  - key: "core-controllers"
+                    operator: Exists
+                dnsPolicy: Default
+                settings:
+                  clusterName: sandbox-liju
+                  clusterEndpoint: https://9B35D01BCB8CE67945BD06AFDA3E4199.yl4.ap-south-1.eks.amazonaws.com
+                  interruptionQueue: Karpenter-sandbox-liju
+                webhook:
+                  enabled: false
+            EOT,
+        ]
+      + verify                     = false
+      + version                    = "1.6.1"
+      + wait                       = true
+      + wait_for_jobs              = false
+    }
+
+  # module.eks.aws_eks_addon.this["aws-ebs-csi-driver"] will be updated in-place
+  ~ resource "aws_eks_addon" "this" {
+      ~ addon_version               = "v1.61.1-eksbuild.1" -> "v1.62.0-eksbuild.1"
+        id                          = "sandbox-liju:aws-ebs-csi-driver"
+        tags                        = {
+            "Environment" = "sandbox"
+            "Team"        = "SRE"
+            "Terraform"   = "true"
+        }
+        # (12 unchanged attributes hidden)
+
+        # (2 unchanged blocks hidden)
+    }
+
+  # module.karpenter.data.aws_iam_policy_document.controller[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "controller" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-south-1:*:capacity-reservation/*",
+              + "arn:aws:ec2:ap-south-1:*:placement-group/*",
+              + "arn:aws:ec2:ap-south-1:*:security-group/*",
+              + "arn:aws:ec2:ap-south-1:*:subnet/*",
+              + "arn:aws:ec2:ap-south-1::image/*",
+              + "arn:aws:ec2:ap-south-1::snapshot/*",
+            ]
+          + sid       = "AllowScopedEC2InstanceAccessActions"
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-south-1:*:launch-template/*",
+            ]
+          + sid       = "AllowScopedEC2LaunchTemplateAccessActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:CreateLaunchTemplate",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-south-1:*:capacity-reservation/*",
+              + "arn:aws:ec2:ap-south-1:*:fleet/*",
+              + "arn:aws:ec2:ap-south-1:*:instance/*",
+              + "arn:aws:ec2:ap-south-1:*:launch-template/*",
+              + "arn:aws:ec2:ap-south-1:*:network-interface/*",
+              + "arn:aws:ec2:ap-south-1:*:spot-instances-request/*",
+              + "arn:aws:ec2:ap-south-1:*:volume/*",
+            ]
+          + sid       = "AllowScopedEC2InstanceActionsWithTags"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:RequestTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sandbox-liju",
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-south-1:*:fleet/*",
+              + "arn:aws:ec2:ap-south-1:*:instance/*",
+              + "arn:aws:ec2:ap-south-1:*:launch-template/*",
+              + "arn:aws:ec2:ap-south-1:*:network-interface/*",
+              + "arn:aws:ec2:ap-south-1:*:spot-instances-request/*",
+              + "arn:aws:ec2:ap-south-1:*:volume/*",
+            ]
+          + sid       = "AllowScopedResourceCreationTagging"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "RunInstances",
+                  + "CreateFleet",
+                  + "CreateLaunchTemplate",
+                ]
+              + variable = "ec2:CreateAction"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:RequestTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sandbox-liju",
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-south-1:*:instance/*",
+            ]
+          + sid       = "AllowScopedResourceTagging"
+
+          + condition {
+              + test     = "ForAllValues:StringEquals"
+              + values   = [
+                  + "eks:eks-cluster-name",
+                  + "karpenter.sh/nodeclaim",
+                  + "Name",
+                ]
+              + variable = "aws:TagKeys"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringEqualsIfExists"
+              + values   = [
+                  + "sandbox-liju",
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DeleteLaunchTemplate",
+              + "ec2:TerminateInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:ap-south-1:*:instance/*",
+              + "arn:aws:ec2:ap-south-1:*:launch-template/*",
+            ]
+          + sid       = "AllowScopedDeletion"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DescribeAvailabilityZones",
+              + "ec2:DescribeCapacityReservations",
+              + "ec2:DescribeImages",
+              + "ec2:DescribeInstanceStatus",
+              + "ec2:DescribeInstanceTypeOfferings",
+              + "ec2:DescribeInstanceTypes",
+              + "ec2:DescribeInstances",
+              + "ec2:DescribeLaunchTemplates",
+              + "ec2:DescribePlacementGroups",
+              + "ec2:DescribeSecurityGroups",
+              + "ec2:DescribeSpotPriceHistory",
+              + "ec2:DescribeSubnets",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowRegionalReadActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-south-1",
+                ]
+              + variable = "aws:RequestedRegion"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ssm:GetParameter",
+            ]
+          + resources = [
+              + "arn:aws:ssm:ap-south-1::parameter/aws/service/*",
+            ]
+          + sid       = "AllowSSMReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "pricing:GetProducts",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowPricingReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "arc-zonal-shift:GetManagedResource",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowZonalShiftReadActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "arn:aws:eks:ap-south-1:056562102950:cluster/sandbox-liju",
+                ]
+              + variable = "arc-zonal-shift:ResourceIdentifier"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "sqs:DeleteMessage",
+              + "sqs:GetQueueUrl",
+              + "sqs:ReceiveMessage",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowInterruptionQueueActions"
+        }
+      + statement {
+          + actions   = [
+              + "iam:PassRole",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowPassingInstanceRole"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ec2.amazonaws.com",
+                ]
+              + variable = "iam:PassedToService"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:CreateInstanceProfile",
+            ]
+          + resources = [
+              + "arn:aws:iam::056562102950:instance-profile/*",
+            ]
+          + sid       = "AllowScopedInstanceProfileCreationActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-south-1",
+                ]
+              + variable = "aws:RequestTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:RequestTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sandbox-liju",
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:TagInstanceProfile",
+            ]
+          + resources = [
+              + "arn:aws:iam::056562102950:instance-profile/*",
+            ]
+          + sid       = "AllowScopedInstanceProfileTagActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-south-1",
+                ]
+              + variable = "aws:RequestTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-south-1",
+                ]
+              + variable = "aws:ResourceTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:RequestTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sandbox-liju",
+                ]
+              + variable = "aws:RequestTag/eks:eks-cluster-name"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:AddRoleToInstanceProfile",
+              + "iam:DeleteInstanceProfile",
+              + "iam:RemoveRoleFromInstanceProfile",
+            ]
+          + resources = [
+              + "arn:aws:iam::056562102950:instance-profile/*",
+            ]
+          + sid       = "AllowScopedInstanceProfileActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ap-south-1",
+                ]
+              + variable = "aws:ResourceTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/sandbox-liju"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:GetInstanceProfile",
+            ]
+          + resources = [
+              + "arn:aws:iam::056562102950:instance-profile/*",
+            ]
+          + sid       = "AllowInstanceProfileReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "iam:ListInstanceProfiles",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowUnscopedInstanceProfileListAction"
+        }
+      + statement {
+          + actions   = [
+              + "eks:DescribeCluster",
+            ]
+          + resources = [
+              + "arn:aws:eks:ap-south-1:056562102950:cluster/sandbox-liju",
+            ]
+          + sid       = "AllowAPIServerEndpointDiscovery"
+        }
+    }
+
+  # module.karpenter.data.aws_iam_policy_document.queue[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "queue" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "sqs:SendMessage",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "SqsWrite"
+
+          + principals {
+              + identifiers = [
+                  + "events.amazonaws.com",
+                  + "sqs.amazonaws.com",
+                ]
+              + type        = "Service"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "sqs:*",
+            ]
+          + effect    = "Deny"
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "DenyHTTP"
+
+          + condition {
+              + test     = "Bool"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:SecureTransport"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "*"
+            }
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["capacity_reservation_interruption"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 capacity reservation instance interruption warning"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Capacity Reservation Instance Interruption Warning",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterCRInterruption-"
+      + region         = "ap-south-1"
+      + tags           = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all       = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["health_event"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - AWS health event"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "AWS Health Event",
+                ]
+              + source      = [
+                  + "aws.health",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterHealthEvent-"
+      + region         = "ap-south-1"
+      + tags           = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all       = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["instance_rebalance"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 instance rebalance recommendation"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Instance Rebalance Recommendation",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterInstanceRebalance-"
+      + region         = "ap-south-1"
+      + tags           = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all       = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["instance_state_change"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 instance state-change notification"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Instance State-change Notification",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterInstanceStateChange-"
+      + region         = "ap-south-1"
+      + tags           = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all       = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["spot_interrupt"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 spot instance interruption warning"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Spot Instance Interruption Warning",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterSpotInterrupt-"
+      + region         = "ap-south-1"
+      + tags           = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all       = {
+          + "ClusterName" = "sandbox-liju"
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["capacity_reservation_interruption"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["health_event"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["instance_rebalance"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["instance_state_change"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["spot_interrupt"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + region         = "ap-south-1"
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_eks_access_entry.node[0] will be created
+  + resource "aws_eks_access_entry" "node" {
+      + access_entry_arn  = (known after apply)
+      + cluster_name      = "sandbox-liju"
+      + created_at        = (known after apply)
+      + id                = (known after apply)
+      + kubernetes_groups = (known after apply)
+      + modified_at       = (known after apply)
+      + principal_arn     = (known after apply)
+      + region            = "ap-south-1"
+      + tags              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all          = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + type              = "EC2_LINUX"
+      + user_name         = (known after apply)
+    }
+
+  # module.karpenter.aws_eks_pod_identity_association.karpenter[0] will be created
+  + resource "aws_eks_pod_identity_association" "karpenter" {
+      + association_arn      = (known after apply)
+      + association_id       = (known after apply)
+      + cluster_name         = "sandbox-liju"
+      + disable_session_tags = false
+      + external_id          = (known after apply)
+      + id                   = (known after apply)
+      + namespace            = "kube-system"
+      + region               = "ap-south-1"
+      + role_arn             = (known after apply)
+      + service_account      = "karpenter"
+      + tags                 = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.karpenter.aws_iam_policy.controller[0] will be created
+  + resource "aws_iam_policy" "controller" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Karpenter controller IAM policy"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "KarpenterController-"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.karpenter.aws_iam_role.controller[0] will be created
+  + resource "aws_iam_role" "controller" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = [
+                          + "sts:TagSession",
+                          + "sts:AssumeRole",
+                        ]
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "pods.eks.amazonaws.com"
+                        }
+                      + Sid       = "PodIdentity"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + description           = "Karpenter controller IAM role"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "KarpenterController-"
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role.node[0] will be created
+  + resource "aws_iam_role" "node" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "Karpenter-sandbox-liju-"
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.controller[0] will be created
+  + resource "aws_iam_role_policy_attachment" "controller" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryPullOnly"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPullOnly"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonEBSCSIDriverPolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "node_additional" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonSSMManagedInstanceCore"] will be created
+  + resource "aws_iam_role_policy_attachment" "node_additional" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_sqs_queue.this[0] will be created
+  + resource "aws_sqs_queue" "this" {
+      + arn                               = (known after apply)
+      + content_based_deduplication       = false
+      + deduplication_scope               = (known after apply)
+      + delay_seconds                     = 0
+      + fifo_queue                        = false
+      + fifo_throughput_limit             = (known after apply)
+      + id                                = (known after apply)
+      + kms_data_key_reuse_period_seconds = 0
+      + max_message_size                  = 262144
+      + message_retention_seconds         = 300
+      + name                              = "Karpenter-sandbox-liju"
+      + name_prefix                       = (known after apply)
+      + policy                            = (known after apply)
+      + receive_wait_time_seconds         = 0
+      + redrive_allow_policy              = (known after apply)
+      + redrive_policy                    = (known after apply)
+      + region                            = "ap-south-1"
+      + sqs_managed_sse_enabled           = true
+      + tags                              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all                          = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + url                               = (known after apply)
+      + visibility_timeout_seconds        = 30
+    }
+
+  # module.karpenter.aws_sqs_queue_policy.this[0] will be created
+  + resource "aws_sqs_queue_policy" "this" {
+      + id        = (known after apply)
+      + policy    = (known after apply)
+      + queue_url = (known after apply)
+      + region    = "ap-south-1"
+    }
+
+Plan: 24 to add, 1 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+module.karpenter.aws_iam_role.controller[0]: Creating...
+module.karpenter.aws_cloudwatch_event_rule.this["instance_rebalance"]: Creating...
+module.karpenter.aws_cloudwatch_event_rule.this["capacity_reservation_interruption"]: Creating...
+module.karpenter.aws_cloudwatch_event_rule.this["spot_interrupt"]: Creating...
+module.karpenter.aws_cloudwatch_event_rule.this["instance_state_change"]: Creating...
+module.karpenter.aws_iam_role.node[0]: Creating...
+module.karpenter.aws_cloudwatch_event_rule.this["health_event"]: Creating...
+module.karpenter.aws_sqs_queue.this[0]: Creating...
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Modifying... [id=sandbox-liju:aws-ebs-csi-driver]
+module.karpenter.aws_cloudwatch_event_rule.this["health_event"]: Creation complete after 0s [id=KarpenterHealthEvent-20260617213248143000000006]
+module.karpenter.aws_cloudwatch_event_rule.this["capacity_reservation_interruption"]: Creation complete after 0s [id=KarpenterCRInterruption-20260617213248140300000003]
+module.karpenter.aws_cloudwatch_event_rule.this["instance_rebalance"]: Creation complete after 1s [id=KarpenterInstanceRebalance-20260617213248140100000002]
+module.karpenter.aws_cloudwatch_event_rule.this["spot_interrupt"]: Creation complete after 1s [id=KarpenterSpotInterrupt-20260617213248140400000004]
+module.karpenter.aws_cloudwatch_event_rule.this["instance_state_change"]: Creation complete after 1s [id=KarpenterInstanceStateChange-20260617213248143000000005]
+module.karpenter.aws_iam_role.controller[0]: Creation complete after 2s [id=KarpenterController-20260617213248139300000001]
+module.karpenter.aws_eks_pod_identity_association.karpenter[0]: Creating...
+module.karpenter.aws_iam_role.node[0]: Creation complete after 2s [id=Karpenter-sandbox-liju-20260617213248143100000007]
+module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonEBSCSIDriverPolicy"]: Creating...
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Creating...
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Creating...
+module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonSSMManagedInstanceCore"]: Creating...
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryPullOnly"]: Creating...
+module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonSSMManagedInstanceCore"]: Creation complete after 1s [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryPullOnly"]: Creation complete after 1s [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPullOnly]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Creation complete after 1s [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonEBSCSIDriverPolicy"]: Creation complete after 1s [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Creation complete after 1s [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+module.karpenter.aws_eks_pod_identity_association.karpenter[0]: Creation complete after 1s [id=a-ftkw2ezetw4rqpj9g]
+module.karpenter.aws_sqs_queue.this[0]: Still creating... [00m10s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Still modifying... [id=sandbox-liju:aws-ebs-csi-driver, 00m10s elapsed]
+module.karpenter.aws_sqs_queue.this[0]: Still creating... [00m20s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Still modifying... [id=sandbox-liju:aws-ebs-csi-driver, 00m20s elapsed]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Modifications complete after 26s [id=sandbox-liju:aws-ebs-csi-driver]
+module.karpenter.aws_sqs_queue.this[0]: Creation complete after 27s [id=https://sqs.ap-south-1.amazonaws.com/056562102950/Karpenter-sandbox-liju]
+module.karpenter.data.aws_iam_policy_document.queue[0]: Reading...
+module.karpenter.aws_cloudwatch_event_target.this["capacity_reservation_interruption"]: Creating...
+module.karpenter.data.aws_iam_policy_document.queue[0]: Read complete after 0s [id=3363451843]
+module.karpenter.aws_cloudwatch_event_target.this["spot_interrupt"]: Creating...
+module.karpenter.aws_cloudwatch_event_target.this["instance_rebalance"]: Creating...
+module.karpenter.aws_cloudwatch_event_target.this["health_event"]: Creating...
+module.karpenter.aws_cloudwatch_event_target.this["instance_state_change"]: Creating...
+module.karpenter.data.aws_iam_policy_document.controller[0]: Reading...
+module.karpenter.aws_sqs_queue_policy.this[0]: Creating...
+module.karpenter.data.aws_iam_policy_document.controller[0]: Read complete after 0s [id=588352644]
+module.karpenter.aws_iam_policy.controller[0]: Creating...
+module.karpenter.aws_cloudwatch_event_target.this["instance_state_change"]: Creation complete after 0s [id=KarpenterInstanceStateChange-20260617213248143000000005-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["capacity_reservation_interruption"]: Creation complete after 0s [id=KarpenterCRInterruption-20260617213248140300000003-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["health_event"]: Creation complete after 0s [id=KarpenterHealthEvent-20260617213248143000000006-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["spot_interrupt"]: Creation complete after 0s [id=KarpenterSpotInterrupt-20260617213248140400000004-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["instance_rebalance"]: Creation complete after 0s [id=KarpenterInstanceRebalance-20260617213248140100000002-KarpenterInterruptionQueueTarget]
+helm_release.karpenter: Creating...
+helm_release.karpenter: Creation complete after 5s [id=karpenter]
+module.karpenter.aws_sqs_queue_policy.this[0]: Still creating... [00m10s elapsed]
+module.karpenter.aws_sqs_queue_policy.this[0]: Still creating... [00m20s elapsed]
+module.karpenter.aws_sqs_queue_policy.this[0]: Creation complete after 25s [id=https://sqs.ap-south-1.amazonaws.com/056562102950/Karpenter-sandbox-liju]
+module.karpenter.aws_eks_access_entry.node[0]: Creating...
+module.karpenter.aws_eks_access_entry.node[0]: Creation complete after 1s [id=sandbox-liju:arn:aws:iam::056562102950:role/Karpenter-sandbox-liju-20260617213248143100000007]
+module.karpenter.aws_iam_role_policy.controller[0]: Creating...
+module.karpenter.aws_iam_role_policy.controller[0]: Creation complete after 2s [id=KarpenterController-20260617213248139300000001:KarpenterController-20260617214813449900000001]
