@@ -12,3 +12,7 @@ output "public_subnet_ids" {
 output "intra_subnet_ids" {
   value = module.vpc.intra_subnets
 }
+
+output "github_actions_ecr_role_arn" {
+  value = aws_iam_role.github_actions_ecr_role.arn
+}

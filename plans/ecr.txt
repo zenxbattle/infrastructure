@@ -1,0 +1,227 @@
+data.aws_caller_identity.current: Reading...
+module.vpc.aws_vpc.this[0]: Refreshing state... [id=vpc-0cb1b3db3e0108fdd]
+data.aws_caller_identity.current: Read complete after 0s [id=056562102950]
+aws_route53_zone.sandbox_liju_internal: Refreshing state... [id=Z0080474WUGHDW1MOR4R]
+module.vpc.aws_default_route_table.default[0]: Refreshing state... [id=rtb-06bfa16c145ecaf8f]
+module.vpc.aws_route_table.private[0]: Refreshing state... [id=rtb-073fce3debd8bbaf3]
+module.vpc.aws_route_table.intra[0]: Refreshing state... [id=rtb-0beafe8dfb64342ab]
+module.vpc.aws_route_table.private[1]: Refreshing state... [id=rtb-0ff66744f2eb44a24]
+module.vpc.aws_internet_gateway.this[0]: Refreshing state... [id=igw-0cc166de769fb76cf]
+module.vpc.aws_default_network_acl.this[0]: Refreshing state... [id=acl-00af71fa545ce89bb]
+module.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-099e9a50bfaa065d5]
+module.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-00bc6863ede15d545]
+module.vpc.aws_route_table.public[0]: Refreshing state... [id=rtb-090bb3d27cc816761]
+module.vpc.aws_default_security_group.this[0]: Refreshing state... [id=sg-07769f67436dc369f]
+module.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-05323b1d931769d53]
+module.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-02c1a1386688fcbe4]
+module.vpc.aws_subnet.intra[0]: Refreshing state... [id=subnet-0000fef52956ed469]
+module.vpc.aws_subnet.intra[1]: Refreshing state... [id=subnet-014d7060d84842ae7]
+module.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-021a4e350d11ddf15]
+module.vpc.aws_eip.nat[1]: Refreshing state... [id=eipalloc-0a994c7ead4f5a838]
+module.vpc.aws_route.public_internet_gateway[0]: Refreshing state... [id=r-rtb-090bb3d27cc8167611080289494]
+module.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0529b4b3244b333ed]
+module.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0be65897f40df404e]
+module.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-040791992c1268f94]
+module.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-03678e1569055aac2]
+module.vpc.aws_route_table_association.intra[1]: Refreshing state... [id=rtbassoc-058a24f8be6b40ff6]
+module.vpc.aws_route_table_association.intra[0]: Refreshing state... [id=rtbassoc-05d6cd38991912634]
+module.vpc.aws_nat_gateway.this[1]: Refreshing state... [id=nat-05fcfd662e0b64e0b]
+module.vpc.aws_nat_gateway.this[0]: Refreshing state... [id=nat-011c2c47736877cdd]
+module.vpc.aws_route.private_nat_gateway[1]: Refreshing state... [id=r-rtb-0ff66744f2eb44a241080289494]
+module.vpc.aws_route.private_nat_gateway[0]: Refreshing state... [id=r-rtb-073fce3debd8bbaf31080289494]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are
+indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_ecr_repository.repos["apigateway"] will be created
+  + resource "aws_ecr_repository" "repos" {
+      + arn                  = (known after apply)
+      + id                   = (known after apply)
+      + image_tag_mutability = "MUTABLE"
+      + name                 = "apigateway"
+      + region               = "ap-south-1"
+      + registry_id          = (known after apply)
+      + repository_url       = (known after apply)
+      + tags_all             = (known after apply)
+
+      + image_scanning_configuration {
+          + scan_on_push = true
+        }
+    }
+
+  # aws_ecr_repository.repos["authuseradminservice"] will be created
+  + resource "aws_ecr_repository" "repos" {
+      + arn                  = (known after apply)
+      + id                   = (known after apply)
+      + image_tag_mutability = "MUTABLE"
+      + name                 = "authuseradminservice"
+      + region               = "ap-south-1"
+      + registry_id          = (known after apply)
+      + repository_url       = (known after apply)
+      + tags_all             = (known after apply)
+
+      + image_scanning_configuration {
+          + scan_on_push = true
+        }
+    }
+
+  # aws_ecr_repository.repos["codeexecutionengine"] will be created
+  + resource "aws_ecr_repository" "repos" {
+      + arn                  = (known after apply)
+      + id                   = (known after apply)
+      + image_tag_mutability = "MUTABLE"
+      + name                 = "codeexecutionengine"
+      + region               = "ap-south-1"
+      + registry_id          = (known after apply)
+      + repository_url       = (known after apply)
+      + tags_all             = (known after apply)
+
+      + image_scanning_configuration {
+          + scan_on_push = true
+        }
+    }
+
+  # aws_ecr_repository.repos["problemservice"] will be created
+  + resource "aws_ecr_repository" "repos" {
+      + arn                  = (known after apply)
+      + id                   = (known after apply)
+      + image_tag_mutability = "MUTABLE"
+      + name                 = "problemservice"
+      + region               = "ap-south-1"
+      + registry_id          = (known after apply)
+      + repository_url       = (known after apply)
+      + tags_all             = (known after apply)
+
+      + image_scanning_configuration {
+          + scan_on_push = true
+        }
+    }
+
+  # aws_iam_openid_connect_provider.github_actions will be created
+  + resource "aws_iam_openid_connect_provider" "github_actions" {
+      + arn             = (known after apply)
+      + client_id_list  = [
+          + "sts.amazonaws.com",
+        ]
+      + id              = (known after apply)
+      + tags_all        = (known after apply)
+      + thumbprint_list = (known after apply)
+      + url             = "https://token.actions.githubusercontent.com"
+    }
+
+  # aws_iam_policy.ecr_access_policy will be created
+  + resource "aws_iam_policy" "ecr_access_policy" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + id               = (known after apply)
+      + name             = "ecr-access-policy"
+      + name_prefix      = (known after apply)
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "ecr:GetDownloadUrlForLayer",
+                          + "ecr:BatchCheckLayerAvailability",
+                          + "ecr:CompleteLayerUpload",
+                          + "ecr:InitiateLayerUpload",
+                          + "ecr:PutImage",
+                          + "ecr:UploadLayerPart",
+                          + "ecr:BatchGetImage",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = [
+                          + "arn:aws:ecr:ap-south-1:056562102950:repository/authuseradminservice",
+                          + "arn:aws:ecr:ap-south-1:056562102950:repository/apigateway",
+                          + "arn:aws:ecr:ap-south-1:056562102950:repository/problemservice",
+                          + "arn:aws:ecr:ap-south-1:056562102950:repository/codeexecutionengine",
+                        ]
+                    },
+                  + {
+                      + Action   = "ecr:GetAuthorizationToken"
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # aws_iam_role.github_actions_ecr_role will be created
+  + resource "aws_iam_role" "github_actions_ecr_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "github-actions-ecr-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.github_actions_ecr will be created
+  + resource "aws_iam_role_policy_attachment" "github_actions_ecr" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = "github-actions-ecr-role"
+    }
+
+Plan: 8 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + github_actions_ecr_role_arn = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_iam_openid_connect_provider.github_actions: Creating...
+aws_iam_policy.ecr_access_policy: Creating...
+aws_ecr_repository.repos["apigateway"]: Creating...
+aws_ecr_repository.repos["authuseradminservice"]: Creating...
+aws_ecr_repository.repos["codeexecutionengine"]: Creating...
+aws_ecr_repository.repos["problemservice"]: Creating...
+aws_ecr_repository.repos["problemservice"]: Creation complete after 0s [id=problemservice]
+aws_ecr_repository.repos["apigateway"]: Creation complete after 0s [id=apigateway]
+aws_ecr_repository.repos["codeexecutionengine"]: Creation complete after 0s [id=codeexecutionengine]
+aws_ecr_repository.repos["authuseradminservice"]: Creation complete after 0s [id=authuseradminservice]
+aws_iam_openid_connect_provider.github_actions: Creation complete after 1s [id=arn:aws:iam::056562102950:oidc-provider/token.actions.githubusercontent.com]
+aws_iam_role.github_actions_ecr_role: Creating...
+aws_iam_policy.ecr_access_policy: Creation complete after 1s [id=arn:aws:iam::056562102950:policy/ecr-access-policy]
+aws_iam_role.github_actions_ecr_role: Creation complete after 1s [id=github-actions-ecr-role]
+aws_iam_role_policy_attachment.github_actions_ecr: Creating...
+aws_iam_role_policy_attachment.github_actions_ecr: Creation complete after 0s [id=github-actions-ecr-role/arn:aws:iam::056562102950:policy/ecr-access-policy]
+
+Apply complete! Resources: 8 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+github_actions_ecr_role_arn = "arn:aws:iam::056562102950:role/github-actions-ecr-role"
+intra_subnet_ids = [
+  "subnet-0000fef52956ed469",
+  "subnet-014d7060d84842ae7",
+]
+private_subnet_ids = [
+  "subnet-00bc6863ede15d545",
+  "subnet-099e9a50bfaa065d5",
+]
+public_subnet_ids = [
+  "subnet-02c1a1386688fcbe4",
+  "subnet-05323b1d931769d53",
+]
+vpc_id = "vpc-0cb1b3db3e0108fdd"

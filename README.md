@@ -20,9 +20,9 @@ engine           (karpenter, on-demand)       → code-exec workers
 - [x] eks — karpenter controller
 - [x] eks — argoCD install (`helm_release.argocd`)
 - [x] eks — argoCD appproject + repo secret + metaapp
-- [x] eks — EC2NodeClass deployment
+- [x] eks — EC2NodeClass (in karpenter.tf)
+- [x] core — ECR repos + GitHub OIDC
 - [ ] eks — pod identities (aws-lbc, external-dns, cert-manager)
-- [ ] core — ECR repos + GitHub OIDC
 - [ ] gitops — repo + connect argoCD
 - [ ] infisical — clustersecretstore + externalsecret
 - [ ] gitops — infra apps (kong, cert-manager, external-dns, aws-lbc)
