@@ -1,0 +1,273 @@
+var.gitops_github_token
+  GitHub personal access token (repo scope) for ArgoCD private repo access
+
+  Enter a value:
+
+var.gitops_github_user
+  GitHub username for ArgoCD private repo access
+
+  Enter a value:
+
+data.aws_vpc.selected: Reading...
+module.karpenter.data.aws_iam_policy_document.controller_assume_role[0]: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.kms.data.aws_caller_identity.current[0]: Reading...
+module.karpenter.data.aws_service_principal.ec2[0]: Reading...
+module.karpenter.data.aws_caller_identity.current[0]: Reading...
+module.eks.module.kms.data.aws_partition.current[0]: Reading...
+module.karpenter.data.aws_region.current[0]: Reading...
+module.eks.data.aws_partition.current[0]: Reading...
+module.eks.aws_cloudwatch_log_group.this[0]: Refreshing state... [id=/aws/eks/sandbox-liju/cluster]
+module.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.karpenter.data.aws_region.current[0]: Read complete after 0s [id=ap-south-1]
+module.karpenter.data.aws_service_principal.ec2[0]: Read complete after 0s [id=ec2.ap-south-1.amazonaws.com]
+module.eks.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.karpenter.data.aws_iam_policy_document.controller_assume_role[0]: Read complete after 0s [id=148955103]
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2830595799]
+data.aws_iam_role.sso_administratoraccess: Reading...
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.karpenter.data.aws_partition.current[0]: Reading...
+module.eks.data.aws_caller_identity.current[0]: Reading...
+data.aws_caller_identity.current: Reading...
+module.karpenter.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.eks.aws_iam_role.this[0]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role.this[0]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002]
+module.karpenter.aws_iam_role.controller[0]: Refreshing state... [id=KarpenterController-20260617213248139300000001]
+module.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.karpenter.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.karpenter.data.aws_iam_policy_document.node_assume_role[0]: Reading...
+module.karpenter.data.aws_iam_policy_document.node_assume_role[0]: Read complete after 0s [id=2560088296]
+data.aws_caller_identity.current: Read complete after 0s [id=056562102950]
+module.eks.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.eks.data.aws_iam_session_context.current[0]: Reading...
+data.aws_vpc.selected: Read complete after 0s [id=vpc-0cb1b3db3e0108fdd]
+data.aws_subnets.private: Reading...
+module.eks.aws_security_group.cluster[0]: Refreshing state... [id=sg-0f16cab7001e6b848]
+module.eks.aws_security_group.node[0]: Refreshing state... [id=sg-086f0b423832e46ed]
+data.aws_subnets.private: Read complete after 0s [id=ap-south-1]
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Refreshing state... [id=sgrule-2271351111]
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Refreshing state... [id=sgrule-2690543733]
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Refreshing state... [id=sgrule-1310750417]
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Refreshing state... [id=sgrule-2487102822]
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Refreshing state... [id=sgrule-3595473913]
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Refreshing state... [id=sgrule-3657416579]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Refreshing state... [id=sgrule-3176043448]
+module.eks.aws_security_group_rule.node["egress_all"]: Refreshing state... [id=sgrule-1786046300]
+module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Refreshing state... [id=sgrule-3792159618]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Refreshing state... [id=sgrule-420556887]
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Refreshing state... [id=sgrule-4036959917]
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Refreshing state... [id=sgrule-854235699]
+data.aws_iam_role.sso_administratoraccess: Read complete after 1s [id=AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15]
+module.eks.data.aws_iam_session_context.current[0]: Read complete after 1s [id=arn:aws:sts::056562102950:assumed-role/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15/liju_aion]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy]
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=2016481935]
+module.eks.module.kms.aws_kms_key.this[0]: Refreshing state... [id=615aa9ed-2bf6-4c9e-a774-efccfdaa2398]
+module.eks.module.kms.aws_kms_alias.this["cluster"]: Refreshing state... [id=alias/eks/sandbox-liju]
+module.eks.aws_iam_policy.cluster_encryption[0]: Refreshing state... [id=arn:aws:iam::056562102950:policy/sandbox-liju-cluster-ClusterEncryption20260616213425117500000005]
+module.eks.aws_eks_cluster.this[0]: Refreshing state... [id=sandbox-liju]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Environment]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Terraform"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Terraform]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Team"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Team]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Refreshing state... [id=sandbox-liju:arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Reading...
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...
+module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Reading...
+module.eks.time_sleep.this[0]: Refreshing state... [id=2026-06-16T21:43:07Z]
+module.eks.data.tls_certificate.this[0]: Reading...
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Reading...
+module.eks.module.eks_managed_node_group["core-controllers"].module.user_data.null_resource.validate_cluster_service_cidr: Refreshing state... [id=7092292498662972027]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_ssm_parameter.ami[0]: Reading...
+module.eks.data.tls_certificate.this[0]: Read complete after 0s [id=1e3a331631939a1ae4a625cd4244a4963dabbfa2]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_launch_template.this[0]: Refreshing state... [id=lt-0a29463abbb12d975]
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Refreshing state... [id=arn:aws:iam::056562102950:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/9B35D01BCB8CE67945BD06AFDA3E4199]
+module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Read complete after 0s [id=eks-pod-identity-agent]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 0s [id=coredns]
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 0s [id=vpc-cni]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_ssm_parameter.ami[0]: Read complete after 0s [id=/aws/service/eks/optimized-ami/1.33/amazon-linux-2023/arm64/standard/recommended/release_version]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Refreshing state... [id=sandbox-liju:core-controllers-2026061621431332360000000a]
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Read complete after 0s [id=aws-ebs-csi-driver]
+module.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003/arn:aws:iam::056562102950:policy/sandbox-liju-cluster-ClusterEncryption20260616213425117500000005]
+module.eks.aws_eks_access_policy_association.this["sso_administrators_eksadminpolicy"]: Refreshing state... [id=sandbox-liju#arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 0s [id=kube-proxy]
+module.eks.aws_eks_addon.before_compute["eks-pod-identity-agent"]: Refreshing state... [id=sandbox-liju:eks-pod-identity-agent]
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Refreshing state... [id=sandbox-liju:vpc-cni]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Refreshing state... [id=sandbox-liju:aws-ebs-csi-driver]
+module.eks.aws_eks_addon.this["coredns"]: Refreshing state... [id=sandbox-liju:coredns]
+module.eks.aws_eks_addon.this["kube-proxy"]: Refreshing state... [id=sandbox-liju:kube-proxy]
+module.karpenter.aws_cloudwatch_event_rule.this["spot_interrupt"]: Refreshing state... [id=KarpenterSpotInterrupt-20260617213248140400000004]
+module.karpenter.aws_cloudwatch_event_rule.this["instance_rebalance"]: Refreshing state... [id=KarpenterInstanceRebalance-20260617213248140100000002]
+module.karpenter.aws_cloudwatch_event_rule.this["health_event"]: Refreshing state... [id=KarpenterHealthEvent-20260617213248143000000006]
+module.karpenter.aws_eks_pod_identity_association.karpenter[0]: Refreshing state... [id=a-ftkw2ezetw4rqpj9g]
+module.karpenter.aws_cloudwatch_event_rule.this["capacity_reservation_interruption"]: Refreshing state... [id=KarpenterCRInterruption-20260617213248140300000003]
+module.karpenter.aws_cloudwatch_event_rule.this["instance_state_change"]: Refreshing state... [id=KarpenterInstanceStateChange-20260617213248143000000005]
+module.karpenter.aws_sqs_queue.this[0]: Refreshing state... [id=https://sqs.ap-south-1.amazonaws.com/056562102950/Karpenter-sandbox-liju]
+module.karpenter.aws_iam_role.node[0]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007]
+helm_release.argocd: Refreshing state... [id=argocd]
+module.karpenter.data.aws_iam_policy_document.queue[0]: Reading...
+helm_release.karpenter: Refreshing state... [id=karpenter]
+module.karpenter.data.aws_iam_policy_document.queue[0]: Read complete after 0s [id=3363451843]
+module.karpenter.aws_sqs_queue_policy.this[0]: Refreshing state... [id=https://sqs.ap-south-1.amazonaws.com/056562102950/Karpenter-sandbox-liju]
+module.karpenter.aws_cloudwatch_event_target.this["spot_interrupt"]: Refreshing state... [id=KarpenterSpotInterrupt-20260617213248140400000004-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["capacity_reservation_interruption"]: Refreshing state... [id=KarpenterCRInterruption-20260617213248140300000003-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["instance_state_change"]: Refreshing state... [id=KarpenterInstanceStateChange-20260617213248143000000005-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["health_event"]: Refreshing state... [id=KarpenterHealthEvent-20260617213248143000000006-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["instance_rebalance"]: Refreshing state... [id=KarpenterInstanceRebalance-20260617213248140100000002-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonSSMManagedInstanceCore"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryPullOnly"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPullOnly]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+module.karpenter.aws_eks_access_entry.node[0]: Refreshing state... [id=sandbox-liju:arn:aws:iam::056562102950:role/Karpenter-sandbox-liju-20260617213248143100000007]
+module.karpenter.data.aws_iam_policy_document.controller[0]: Reading...
+module.karpenter.data.aws_iam_policy_document.controller[0]: Read complete after 0s [id=588352644]
+module.karpenter.aws_iam_role_policy.controller[0]: Refreshing state... [id=KarpenterController-20260617213248139300000001:KarpenterController-20260617214813449900000001]
+kubernetes_secret.argocd_repo: Refreshing state... [id=argocd/sandbox-gitops]
+kubernetes_manifest.argocd_appproject: Refreshing state...
+kubernetes_manifest.argocd_metaapp: Refreshing state...
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are
+indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # kubernetes_manifest.common_nodeclass will be created
+  + resource "kubernetes_manifest" "common_nodeclass" {
+      + manifest = {
+          + apiVersion = "karpenter.k8s.aws/v1"
+          + kind       = "EC2NodeClass"
+          + metadata   = {
+              + name = "liju-common"
+            }
+          + spec       = {
+              + amiSelectorTerms           = [
+                  + {
+                      + alias = "al2023@latest"
+                    },
+                ]
+              + associatePublicIPAddress   = false
+              + metadataOptions            = {
+                  + httpPutResponseHopLimit = 2
+                }
+              + role                       = "Karpenter-sandbox-liju-20260617213248143100000007"
+              + securityGroupSelectorTerms = [
+                  + {
+                      + id = "sg-086f0b423832e46ed"
+                    },
+                ]
+              + subnetSelectorTerms        = [
+                  + {
+                      + tags = {
+                          + "kubernetes.io/cluster/sandbox-liju" = "shared"
+                          + private                              = "1"
+                        }
+                    },
+                ]
+              + tags                       = {
+                  + "karpenter.sh/nodeclass" = "liju-common"
+                }
+            }
+        }
+      + object   = {
+          + apiVersion = "karpenter.k8s.aws/v1"
+          + kind       = "EC2NodeClass"
+          + metadata   = {
+              + annotations                = (known after apply)
+              + creationTimestamp          = (known after apply)
+              + deletionGracePeriodSeconds = (known after apply)
+              + deletionTimestamp          = (known after apply)
+              + finalizers                 = (known after apply)
+              + generateName               = (known after apply)
+              + generation                 = (known after apply)
+              + labels                     = (known after apply)
+              + managedFields              = (known after apply)
+              + name                       = "liju-common"
+              + namespace                  = (known after apply)
+              + ownerReferences            = (known after apply)
+              + resourceVersion            = (known after apply)
+              + selfLink                   = (known after apply)
+              + uid                        = (known after apply)
+            }
+          + spec       = {
+              + amiFamily                        = (known after apply)
+              + amiSelectorTerms                 = [
+                  + {
+                      + alias        = "al2023@latest"
+                      + id           = (known after apply)
+                      + name         = (known after apply)
+                      + owner        = (known after apply)
+                      + ssmParameter = (known after apply)
+                      + tags         = (known after apply)
+                    },
+                ]
+              + associatePublicIPAddress         = false
+              + blockDeviceMappings              = (known after apply)
+              + capacityReservationSelectorTerms = (known after apply)
+              + context                          = (known after apply)
+              + detailedMonitoring               = (known after apply)
+              + instanceProfile                  = (known after apply)
+              + instanceStorePolicy              = (known after apply)
+              + kubelet                          = {
+                  + clusterDNS                  = (known after apply)
+                  + cpuCFSQuota                 = (known after apply)
+                  + evictionHard                = (known after apply)
+                  + evictionMaxPodGracePeriod   = (known after apply)
+                  + evictionSoft                = (known after apply)
+                  + evictionSoftGracePeriod     = (known after apply)
+                  + imageGCHighThresholdPercent = (known after apply)
+                  + imageGCLowThresholdPercent  = (known after apply)
+                  + kubeReserved                = (known after apply)
+                  + maxPods                     = (known after apply)
+                  + podsPerCore                 = (known after apply)
+                  + systemReserved              = (known after apply)
+                }
+              + metadataOptions                  = {
+                  + httpEndpoint            = (known after apply)
+                  + httpProtocolIPv6        = (known after apply)
+                  + httpPutResponseHopLimit = 2
+                  + httpTokens              = (known after apply)
+                }
+              + role                             = "Karpenter-sandbox-liju-20260617213248143100000007"
+              + securityGroupSelectorTerms       = [
+                  + {
+                      + id   = "sg-086f0b423832e46ed"
+                      + name = (known after apply)
+                      + tags = (known after apply)
+                    },
+                ]
+              + subnetSelectorTerms              = [
+                  + {
+                      + id   = (known after apply)
+                      + tags = {
+                          + "kubernetes.io/cluster/sandbox-liju" = "shared"
+                          + private                              = "1"
+                        }
+                    },
+                ]
+              + tags                             = {
+                  + "karpenter.sh/nodeclass" = "liju-common"
+                }
+              + userData                         = (known after apply)
+            }
+        }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+kubernetes_manifest.common_nodeclass: Creating...
+kubernetes_manifest.common_nodeclass: Creation complete after 0s
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.

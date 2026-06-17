@@ -42,3 +42,30 @@ resource "helm_release" "karpenter" {
     EOT
   ]
 }
+
+resource "kubernetes_manifest" "common_nodeclass" {
+  depends_on = [helm_release.karpenter]
+
+  manifest = yamldecode(<<-EOMANIFEST
+    apiVersion: karpenter.k8s.aws/v1
+    kind: EC2NodeClass
+    metadata:
+      name: liju-common
+    spec:
+      amiSelectorTerms:
+        - alias: al2023@latest
+      role: ${module.karpenter.node_iam_role_name}
+      subnetSelectorTerms:
+        - tags:
+            private: "1"
+            kubernetes.io/cluster/sandbox-liju: "shared"
+      securityGroupSelectorTerms:
+        - id: ${module.eks.node_security_group_id}
+      associatePublicIPAddress: false
+      metadataOptions:
+        httpPutResponseHopLimit: 2
+      tags:
+        karpenter.sh/nodeclass: liju-common
+    EOMANIFEST
+  )
+}
