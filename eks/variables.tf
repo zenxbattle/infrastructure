@@ -17,3 +17,11 @@ variable "gitops_github_token" {
   type        = string
   sensitive   = true
 }
+
+# generates with: htpasswd -nbBC 10 "" "${password}" | tr -d ':\n' | sed 's/$2y/$2a/'
+# ref: https://argo-cd.readthedocs.io/en/stable/faq/#how-do-i-set-the-admin-password
+variable "argocd_admin_password_hash" {
+  description = "bcrypt hash of the argoCD admin password"
+  type        = string
+  sensitive   = true
+}

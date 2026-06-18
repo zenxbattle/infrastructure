@@ -20,9 +20,9 @@ resource "aws_iam_role" "github_actions_ecr_role" {
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [{
-      Effect = "Allow"
+      Effect    = "Allow"
       Principal = { Federated = aws_iam_openid_connect_provider.github_actions.arn }
-      Action = "sts:AssumeRoleWithWebIdentity"
+      Action    = "sts:AssumeRoleWithWebIdentity"
       Condition = {
         StringEquals = { "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com" }
         StringLike   = { "token.actions.githubusercontent.com:sub" = "repo:${local.github_org}/*:*" }
@@ -66,7 +66,7 @@ resource "aws_iam_role_policy_attachment" "github_actions_ecr" {
 }
 
 resource "aws_ecr_repository" "repos" {
-  for_each = toset(local.repos)
+  for_each             = toset(local.repos)
   name                 = each.value
   image_tag_mutability = "MUTABLE"
   image_scanning_configuration { scan_on_push = true }

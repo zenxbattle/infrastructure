@@ -21,6 +21,8 @@ resource "helm_release" "argocd" {
           server.insecure: true
         cm:
           timeout.reconciliation: "60s"
+        secret:
+          argocdServerAdminPassword: ${var.argocd_admin_password_hash}
       notifications:
         enabled: false
     EOMANIFEST
@@ -34,10 +36,10 @@ resource "kubernetes_manifest" "argocd_appproject" {
     apiVersion: argoproj.io/v1alpha1
     kind: AppProject
     metadata:
-      name: sandbox-liju
+      name: zenxbattle
       namespace: argocd
     spec:
-      description: "sandbox-liju kubernetes cluster"
+      description: "zenxbattle kubernetes cluster"
       clusterResourceWhitelist:
         - group: "*"
           kind: "*"
@@ -58,7 +60,7 @@ resource "kubernetes_secret" "argocd_repo" {
   depends_on = [helm_release.argocd]
 
   metadata {
-    name      = "sandbox-gitops"
+    name      = "zenxbattle-gitops"
     namespace = "argocd"
     labels = {
       "argocd.argoproj.io/secret-type" = "repository"
@@ -66,7 +68,7 @@ resource "kubernetes_secret" "argocd_repo" {
   }
 
   data = {
-    url      = base64encode("https://github.com/zenxbattle/sandbox-gitops")
+    url      = base64encode("https://github.com/zenxbattle/gitops")
     username = base64encode(var.gitops_github_user)
     password = base64encode(var.gitops_github_token)
   }
@@ -84,14 +86,14 @@ resource "kubernetes_manifest" "argocd_metaapp" {
       finalizers:
         - resources-finalizer.argocd.argoproj.io
     spec:
-      project: sandbox-liju
+      project: zenxbattle
       destination:
         namespace: argocd
         name: in-cluster
       source:
-        repoURL: "https://github.com/zenxbattle/sandbox-gitops"
+        repoURL: "https://github.com/zenxbattle/gitops"
         targetRevision: HEAD
-        path: charts/metaapp
+        path: charts/metaapp/0.1.0
         helm:
           valueFiles:
             - "../../../environments/sandbox/metaapp/values.yaml"
