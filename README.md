@@ -22,7 +22,7 @@ engine           (karpenter, on-demand)       → code-exec workers
 - [x] eks — argoCD appproject + repo secret + metaapp
 - [x] eks — EC2NodeClass (in karpenter.tf)
 - [x] core — ECR repos + GitHub OIDC
-- [ ] eks — pod identities (aws-lbc, external-dns, cert-manager)
+- [x] eks — pod identities (aws-lbc, external-dns, cert-manager)
 - [ ] gitops — repo + connect argoCD
 - [ ] infisical — clustersecretstore + externalsecret
 - [ ] gitops — infra apps (kong, cert-manager, external-dns, aws-lbc)

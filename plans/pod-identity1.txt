@@ -1,0 +1,794 @@
+var.gitops_github_token
+  GitHub personal access token (repo scope) for ArgoCD private repo access
+
+  Enter a value:
+
+var.gitops_github_user
+  GitHub username for ArgoCD private repo access
+
+  Enter a value:
+
+module.karpenter.data.aws_region.current[0]: Reading...
+data.aws_caller_identity.current: Reading...
+module.aws_lb_controller_pod_identity.data.aws_iam_policy_document.assume[0]: Reading...
+module.cert_manager_pod_identity.data.aws_iam_policy_document.base[0]: Reading...
+data.aws_iam_role.sso_administratoraccess: Reading...
+data.aws_vpc.selected: Reading...
+module.aws_lb_controller_pod_identity.data.aws_partition.current[0]: Reading...
+module.external_dns_pod_identity.data.aws_partition.current[0]: Reading...
+module.aws_lb_controller_pod_identity.data.aws_iam_policy_document.base[0]: Reading...
+module.karpenter.data.aws_partition.current[0]: Reading...
+module.external_dns_pod_identity.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.aws_lb_controller_pod_identity.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.karpenter.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.karpenter.data.aws_region.current[0]: Read complete after 0s [id=ap-south-1]
+module.cert_manager_pod_identity.data.aws_iam_policy_document.base[0]: Read complete after 0s [id=1132004489]
+module.aws_lb_controller_pod_identity.data.aws_iam_policy_document.base[0]: Read complete after 0s [id=1132004489]
+module.aws_lb_controller_pod_identity.data.aws_iam_policy_document.assume[0]: Read complete after 0s [id=819195744]
+module.aws_lb_controller_pod_identity.data.aws_caller_identity.current[0]: Reading...
+module.cert_manager_pod_identity.data.aws_caller_identity.current[0]: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+data.aws_route53_zone.sandbox_liju_internal: Reading...
+module.external_dns_pod_identity.data.aws_region.current[0]: Reading...
+module.eks.module.kms.data.aws_partition.current[0]: Reading...
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.external_dns_pod_identity.data.aws_region.current[0]: Read complete after 0s [id=ap-south-1]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.aws_lb_controller_pod_identity.data.aws_region.current[0]: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2830595799]
+module.external_dns_pod_identity.data.aws_iam_policy_document.assume[0]: Reading...
+module.aws_lb_controller_pod_identity.data.aws_region.current[0]: Read complete after 0s [id=ap-south-1]
+module.eks.data.aws_caller_identity.current[0]: Reading...
+module.cert_manager_pod_identity.data.aws_partition.current[0]: Reading...
+module.eks.module.kms.data.aws_caller_identity.current[0]: Reading...
+module.cert_manager_pod_identity.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.external_dns_pod_identity.data.aws_iam_policy_document.assume[0]: Read complete after 0s [id=819195744]
+module.external_dns_pod_identity.data.aws_caller_identity.current[0]: Reading...
+module.eks.data.aws_partition.current[0]: Reading...
+module.eks.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.cert_manager_pod_identity.data.aws_region.current[0]: Reading...
+module.cert_manager_pod_identity.data.aws_region.current[0]: Read complete after 0s [id=ap-south-1]
+module.karpenter.data.aws_service_principal.ec2[0]: Reading...
+module.karpenter.data.aws_service_principal.ec2[0]: Read complete after 0s [id=ec2.ap-south-1.amazonaws.com]
+module.karpenter.data.aws_caller_identity.current[0]: Reading...
+data.aws_caller_identity.current: Read complete after 0s [id=056562102950]
+module.external_dns_pod_identity.data.aws_iam_policy_document.base[0]: Reading...
+module.external_dns_pod_identity.data.aws_iam_policy_document.base[0]: Read complete after 0s [id=1132004489]
+module.karpenter.data.aws_iam_policy_document.controller_assume_role[0]: Reading...
+module.karpenter.data.aws_iam_policy_document.controller_assume_role[0]: Read complete after 0s [id=148955103]
+module.cert_manager_pod_identity.data.aws_iam_policy_document.assume[0]: Reading...
+module.cert_manager_pod_identity.data.aws_iam_policy_document.assume[0]: Read complete after 0s [id=819195744]
+module.eks.aws_cloudwatch_log_group.this[0]: Refreshing state... [id=/aws/eks/sandbox-liju/cluster]
+module.cert_manager_pod_identity.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role.this[0]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002]
+module.aws_lb_controller_pod_identity.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.eks.aws_iam_role.this[0]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003]
+module.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.eks.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.karpenter.aws_iam_role.controller[0]: Refreshing state... [id=KarpenterController-20260617213248139300000001]
+module.external_dns_pod_identity.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.eks.data.aws_iam_session_context.current[0]: Reading...
+module.aws_lb_controller_pod_identity.data.aws_iam_policy_document.lb_controller[0]: Reading...
+module.karpenter.data.aws_caller_identity.current[0]: Read complete after 0s [id=056562102950]
+module.aws_lb_controller_pod_identity.data.aws_iam_policy_document.lb_controller[0]: Read complete after 0s [id=4218241835]
+module.karpenter.data.aws_iam_policy_document.node_assume_role[0]: Reading...
+module.karpenter.data.aws_iam_policy_document.node_assume_role[0]: Read complete after 0s [id=2560088296]
+data.aws_iam_role.sso_administratoraccess: Read complete after 1s [id=AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15]
+module.eks.data.aws_iam_session_context.current[0]: Read complete after 1s [id=arn:aws:sts::056562102950:assumed-role/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15/liju_aion]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=core-controllers-eks-node-group-20260616213400639300000002/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy]
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Reading...
+module.eks.module.kms.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=2016481935]
+module.eks.module.kms.aws_kms_key.this[0]: Refreshing state... [id=615aa9ed-2bf6-4c9e-a774-efccfdaa2398]
+data.aws_vpc.selected: Read complete after 2s [id=vpc-0cb1b3db3e0108fdd]
+data.aws_subnets.private: Reading...
+module.eks.aws_security_group.cluster[0]: Refreshing state... [id=sg-0f16cab7001e6b848]
+data.aws_subnets.private: Read complete after 0s [id=ap-south-1]
+module.eks.aws_security_group.node[0]: Refreshing state... [id=sg-086f0b423832e46ed]
+module.eks.module.kms.aws_kms_alias.this["cluster"]: Refreshing state... [id=alias/eks/sandbox-liju]
+module.eks.aws_iam_policy.cluster_encryption[0]: Refreshing state... [id=arn:aws:iam::056562102950:policy/sandbox-liju-cluster-ClusterEncryption20260616213425117500000005]
+module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Refreshing state... [id=sgrule-1310750417]
+module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Refreshing state... [id=sgrule-3657416579]
+module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Refreshing state... [id=sgrule-2487102822]
+module.eks.aws_security_group_rule.node["egress_all"]: Refreshing state... [id=sgrule-1786046300]
+module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Refreshing state... [id=sgrule-3595473913]
+module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Refreshing state... [id=sgrule-4036959917]
+module.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Refreshing state... [id=sgrule-3792159618]
+data.aws_route53_zone.sandbox_liju_internal: Read complete after 2s [id=Z0080474WUGHDW1MOR4R]
+module.eks.aws_security_group_rule.node["ingress_cluster_443"]: Refreshing state... [id=sgrule-2690543733]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Refreshing state... [id=sgrule-420556887]
+module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Refreshing state... [id=sgrule-3176043448]
+module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Refreshing state... [id=sgrule-2271351111]
+module.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Refreshing state... [id=sgrule-854235699]
+module.external_dns_pod_identity.data.aws_iam_policy_document.external_dns[0]: Reading...
+module.cert_manager_pod_identity.data.aws_iam_policy_document.cert_manager[0]: Reading...
+module.external_dns_pod_identity.data.aws_iam_policy_document.external_dns[0]: Read complete after 0s [id=148970371]
+module.cert_manager_pod_identity.data.aws_iam_policy_document.cert_manager[0]: Read complete after 0s [id=151674230]
+module.eks.aws_eks_cluster.this[0]: Refreshing state... [id=sandbox-liju]
+module.eks.aws_iam_role_policy_attachment.cluster_encryption[0]: Refreshing state... [id=sandbox-liju-cluster-20260616213400639300000003/arn:aws:iam::056562102950:policy/sandbox-liju-cluster-ClusterEncryption20260616213425117500000005]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Environment"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Environment]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Terraform"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Terraform]
+module.eks.aws_ec2_tag.cluster_primary_security_group["Team"]: Refreshing state... [id=sg-0bbb2fe9dbae39038,Team]
+module.eks.aws_eks_access_entry.this["sso_administrators"]: Refreshing state... [id=sandbox-liju:arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15]
+module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Reading...
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...
+module.eks.time_sleep.this[0]: Refreshing state... [id=2026-06-16T21:43:07Z]
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...
+module.eks.data.tls_certificate.this[0]: Reading...
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Reading...
+module.eks.data.tls_certificate.this[0]: Read complete after 0s [id=1e3a331631939a1ae4a625cd4244a4963dabbfa2]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Reading...
+module.eks.data.aws_eks_addon_version.this["aws-ebs-csi-driver"]: Read complete after 1s [id=aws-ebs-csi-driver]
+module.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Refreshing state... [id=arn:aws:iam::056562102950:oidc-provider/oidc.eks.ap-south-1.amazonaws.com/id/9B35D01BCB8CE67945BD06AFDA3E4199]
+module.eks.module.eks_managed_node_group["core-controllers"].module.user_data.null_resource.validate_cluster_service_cidr: Refreshing state... [id=7092292498662972027]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_ssm_parameter.ami[0]: Reading...
+module.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Read complete after 1s [id=eks-pod-identity-agent]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_launch_template.this[0]: Refreshing state... [id=lt-0a29463abbb12d975]
+module.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 1s [id=kube-proxy]
+module.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 1s [id=vpc-cni]
+module.eks.aws_eks_access_policy_association.this["sso_administrators_eksadminpolicy"]: Refreshing state... [id=sandbox-liju#arn:aws:iam::056562102950:role/aws-reserved/sso.amazonaws.com/ap-south-1/AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy]
+module.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 1s [id=coredns]
+module.eks.aws_eks_addon.before_compute["eks-pod-identity-agent"]: Refreshing state... [id=sandbox-liju:eks-pod-identity-agent]
+module.eks.aws_eks_addon.before_compute["vpc-cni"]: Refreshing state... [id=sandbox-liju:vpc-cni]
+module.eks.module.eks_managed_node_group["core-controllers"].data.aws_ssm_parameter.ami[0]: Read complete after 0s [id=/aws/service/eks/optimized-ami/1.33/amazon-linux-2023/arm64/standard/recommended/release_version]
+module.eks.module.eks_managed_node_group["core-controllers"].aws_eks_node_group.this[0]: Refreshing state... [id=sandbox-liju:core-controllers-2026061621431332360000000a]
+module.eks.aws_eks_addon.this["aws-ebs-csi-driver"]: Refreshing state... [id=sandbox-liju:aws-ebs-csi-driver]
+module.eks.aws_eks_addon.this["coredns"]: Refreshing state... [id=sandbox-liju:coredns]
+module.eks.aws_eks_addon.this["kube-proxy"]: Refreshing state... [id=sandbox-liju:kube-proxy]
+module.karpenter.aws_eks_pod_identity_association.karpenter[0]: Refreshing state... [id=a-ftkw2ezetw4rqpj9g]
+module.karpenter.aws_cloudwatch_event_rule.this["spot_interrupt"]: Refreshing state... [id=KarpenterSpotInterrupt-20260617213248140400000004]
+module.karpenter.aws_cloudwatch_event_rule.this["capacity_reservation_interruption"]: Refreshing state... [id=KarpenterCRInterruption-20260617213248140300000003]
+module.karpenter.aws_cloudwatch_event_rule.this["health_event"]: Refreshing state... [id=KarpenterHealthEvent-20260617213248143000000006]
+module.karpenter.aws_cloudwatch_event_rule.this["instance_state_change"]: Refreshing state... [id=KarpenterInstanceStateChange-20260617213248143000000005]
+module.karpenter.aws_cloudwatch_event_rule.this["instance_rebalance"]: Refreshing state... [id=KarpenterInstanceRebalance-20260617213248140100000002]
+module.karpenter.aws_sqs_queue.this[0]: Refreshing state... [id=https://sqs.ap-south-1.amazonaws.com/056562102950/Karpenter-sandbox-liju]
+module.karpenter.aws_iam_role.node[0]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007]
+helm_release.argocd: Refreshing state... [id=argocd]
+module.karpenter.data.aws_iam_policy_document.queue[0]: Reading...
+module.karpenter.data.aws_iam_policy_document.queue[0]: Read complete after 0s [id=3363451843]
+helm_release.karpenter: Refreshing state... [id=karpenter]
+module.karpenter.aws_sqs_queue_policy.this[0]: Refreshing state... [id=https://sqs.ap-south-1.amazonaws.com/056562102950/Karpenter-sandbox-liju]
+module.karpenter.aws_cloudwatch_event_target.this["instance_rebalance"]: Refreshing state... [id=KarpenterInstanceRebalance-20260617213248140100000002-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["capacity_reservation_interruption"]: Refreshing state... [id=KarpenterCRInterruption-20260617213248140300000003-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["instance_state_change"]: Refreshing state... [id=KarpenterInstanceStateChange-20260617213248143000000005-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["health_event"]: Refreshing state... [id=KarpenterHealthEvent-20260617213248143000000006-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_cloudwatch_event_target.this["spot_interrupt"]: Refreshing state... [id=KarpenterSpotInterrupt-20260617213248140400000004-KarpenterInterruptionQueueTarget]
+module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonEBSCSIDriverPolicy"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy]
+module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonSSMManagedInstanceCore"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy]
+module.karpenter.aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryPullOnly"]: Refreshing state... [id=Karpenter-sandbox-liju-20260617213248143100000007/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPullOnly]
+module.karpenter.aws_eks_access_entry.node[0]: Refreshing state... [id=sandbox-liju:arn:aws:iam::056562102950:role/Karpenter-sandbox-liju-20260617213248143100000007]
+module.karpenter.data.aws_iam_policy_document.controller[0]: Reading...
+module.karpenter.data.aws_iam_policy_document.controller[0]: Read complete after 0s [id=588352644]
+module.karpenter.aws_iam_role_policy.controller[0]: Refreshing state... [id=KarpenterController-20260617213248139300000001:KarpenterController-20260617214813449900000001]
+kubernetes_secret.argocd_repo: Refreshing state... [id=argocd/sandbox-gitops]
+kubernetes_manifest.argocd_appproject: Refreshing state...
+kubernetes_manifest.argocd_metaapp: Refreshing state...
+kubernetes_manifest.common_nodeclass: Refreshing state...
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with
+the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # module.aws_lb_controller_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"] will be created
+  + resource "aws_eks_pod_identity_association" "this" {
+      + association_arn      = (known after apply)
+      + association_id       = (known after apply)
+      + cluster_name         = "sandbox-liju"
+      + disable_session_tags = false
+      + external_id          = (known after apply)
+      + id                   = (known after apply)
+      + namespace            = "kube-system"
+      + region               = "ap-south-1"
+      + role_arn             = (known after apply)
+      + service_account      = "aws-load-balancer-controller-sa"
+      + tags                 = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.aws_lb_controller_pod_identity.aws_iam_policy.lb_controller[0] will be created
+  + resource "aws_iam_policy" "lb_controller" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Permissions for AWS Load Balancer Controller"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "AmazonEKS_LoadBalancerController-"
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "iam:CreateServiceLinkedRole"
+                      + Condition = {
+                          + StringEquals = {
+                              + "iam:AWSServiceName" = "elasticloadbalancing.amazonaws.com"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:DescribeTrustStores",
+                          + "elasticloadbalancing:DescribeTargetHealth",
+                          + "elasticloadbalancing:DescribeTargetGroups",
+                          + "elasticloadbalancing:DescribeTargetGroupAttributes",
+                          + "elasticloadbalancing:DescribeTags",
+                          + "elasticloadbalancing:DescribeSSLPolicies",
+                          + "elasticloadbalancing:DescribeRules",
+                          + "elasticloadbalancing:DescribeLoadBalancers",
+                          + "elasticloadbalancing:DescribeLoadBalancerAttributes",
+                          + "elasticloadbalancing:DescribeListeners",
+                          + "elasticloadbalancing:DescribeListenerCertificates",
+                          + "elasticloadbalancing:DescribeListenerAttributes",
+                          + "elasticloadbalancing:DescribeCapacityReservation",
+                          + "ec2:GetSecurityGroupsForVpc",
+                          + "ec2:GetCoipPoolUsage",
+                          + "ec2:DescribeVpcs",
+                          + "ec2:DescribeVpcPeeringConnections",
+                          + "ec2:DescribeTags",
+                          + "ec2:DescribeSubnets",
+                          + "ec2:DescribeSecurityGroups",
+                          + "ec2:DescribeRouteTables",
+                          + "ec2:DescribeNetworkInterfaces",
+                          + "ec2:DescribeIpamPools",
+                          + "ec2:DescribeInternetGateways",
+                          + "ec2:DescribeInstances",
+                          + "ec2:DescribeCoipPools",
+                          + "ec2:DescribeAvailabilityZones",
+                          + "ec2:DescribeAddresses",
+                          + "ec2:DescribeAccountAttributes",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "wafv2:ListWebACLs",
+                          + "wafv2:GetWebACLForResource",
+                          + "wafv2:GetWebACL",
+                          + "wafv2:DisassociateWebACL",
+                          + "wafv2:AssociateWebACL",
+                          + "waf-regional:GetWebACLForResource",
+                          + "waf-regional:GetWebACL",
+                          + "waf-regional:DisassociateWebACL",
+                          + "waf-regional:AssociateWebACL",
+                          + "shield:GetSubscriptionState",
+                          + "shield:DescribeProtection",
+                          + "shield:DeleteProtection",
+                          + "shield:CreateProtection",
+                          + "iam:ListServerCertificates",
+                          + "iam:GetServerCertificate",
+                          + "cognito-idp:DescribeUserPoolClient",
+                          + "acm:ListCertificates",
+                          + "acm:DescribeCertificate",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "ec2:RevokeSecurityGroupIngress",
+                          + "ec2:AuthorizeSecurityGroupIngress",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action   = "ec2:CreateSecurityGroup"
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action    = "ec2:CreateTags"
+                      + Condition = {
+                          + Null         = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                          + StringEquals = {
+                              + "ec2:CreateAction" = "CreateSecurityGroup"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "arn:aws:ec2:*:*:security-group/*"
+                    },
+                  + {
+                      + Action    = [
+                          + "ec2:DeleteTags",
+                          + "ec2:CreateTags",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster"  = "true"
+                              + "aws:ResourceTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "arn:aws:ec2:*:*:security-group/*"
+                    },
+                  + {
+                      + Action    = [
+                          + "ec2:RevokeSecurityGroupIngress",
+                          + "ec2:DeleteSecurityGroup",
+                          + "ec2:AuthorizeSecurityGroupIngress",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:ResourceTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "*"
+                    },
+                  + {
+                      + Action    = [
+                          + "elasticloadbalancing:CreateTargetGroup",
+                          + "elasticloadbalancing:CreateLoadBalancer",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:DeleteRule",
+                          + "elasticloadbalancing:DeleteListener",
+                          + "elasticloadbalancing:CreateRule",
+                          + "elasticloadbalancing:CreateListener",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action    = [
+                          + "elasticloadbalancing:RemoveTags",
+                          + "elasticloadbalancing:AddTags",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster"  = "true"
+                              + "aws:ResourceTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = [
+                          + "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:loadbalancer/net/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*",
+                        ]
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:RemoveTags",
+                          + "elasticloadbalancing:AddTags",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = [
+                          + "arn:aws:elasticloadbalancing:*:*:listener/net/*/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:listener/app/*/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:listener-rule/net/*/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:listener-rule/app/*/*/*",
+                        ]
+                    },
+                  + {
+                      + Action    = [
+                          + "elasticloadbalancing:SetSubnets",
+                          + "elasticloadbalancing:SetSecurityGroups",
+                          + "elasticloadbalancing:SetIpAddressType",
+                          + "elasticloadbalancing:ModifyTargetGroupAttributes",
+                          + "elasticloadbalancing:ModifyTargetGroup",
+                          + "elasticloadbalancing:ModifyLoadBalancerAttributes",
+                          + "elasticloadbalancing:ModifyListenerAttributes",
+                          + "elasticloadbalancing:ModifyIpPools",
+                          + "elasticloadbalancing:ModifyCapacityReservation",
+                          + "elasticloadbalancing:DeleteTargetGroup",
+                          + "elasticloadbalancing:DeleteLoadBalancer",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:ResourceTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "*"
+                    },
+                  + {
+                      + Action    = "elasticloadbalancing:AddTags"
+                      + Condition = {
+                          + Null         = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                          + StringEquals = {
+                              + "elasticloadbalancing:CreateAction" = [
+                                  + "CreateTargetGroup",
+                                  + "CreateLoadBalancer",
+                                ]
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = [
+                          + "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:loadbalancer/net/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*",
+                        ]
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:RegisterTargets",
+                          + "elasticloadbalancing:DeregisterTargets",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*"
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:SetWebAcl",
+                          + "elasticloadbalancing:SetRulePriorities",
+                          + "elasticloadbalancing:RemoveListenerCertificates",
+                          + "elasticloadbalancing:ModifyRule",
+                          + "elasticloadbalancing:ModifyListener",
+                          + "elasticloadbalancing:AddListenerCertificates",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.aws_lb_controller_pod_identity.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = [
+                          + "sts:TagSession",
+                          + "sts:AssumeRole",
+                        ]
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "pods.eks.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "liju-aws-lbc-"
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.aws_lb_controller_pod_identity.aws_iam_role_policy_attachment.lb_controller[0] will be created
+  + resource "aws_iam_role_policy_attachment" "lb_controller" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.cert_manager_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"] will be created
+  + resource "aws_eks_pod_identity_association" "this" {
+      + association_arn      = (known after apply)
+      + association_id       = (known after apply)
+      + cluster_name         = "sandbox-liju"
+      + disable_session_tags = false
+      + external_id          = (known after apply)
+      + id                   = (known after apply)
+      + namespace            = "cert-manager"
+      + region               = "ap-south-1"
+      + role_arn             = (known after apply)
+      + service_account      = "cert-manager-sa"
+      + tags                 = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.cert_manager_pod_identity.aws_iam_policy.cert_manager[0] will be created
+  + resource "aws_iam_policy" "cert_manager" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Permissions for Cert Manager"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "AmazonEKS_CertManager-"
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = "route53:GetChange"
+                      + Effect   = "Allow"
+                      + Resource = "arn:aws:route53:::change/*"
+                    },
+                  + {
+                      + Action   = [
+                          + "route53:ListResourceRecordSets",
+                          + "route53:ChangeResourceRecordSets",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "arn:aws:route53:::hostedzone/Z0080474WUGHDW1MOR4R"
+                    },
+                  + {
+                      + Action   = "route53:ListHostedZonesByName"
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.cert_manager_pod_identity.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = [
+                          + "sts:TagSession",
+                          + "sts:AssumeRole",
+                        ]
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "pods.eks.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "liju-cert-manager-"
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.cert_manager_pod_identity.aws_iam_role_policy_attachment.cert_manager[0] will be created
+  + resource "aws_iam_role_policy_attachment" "cert_manager" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.external_dns_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"] will be created
+  + resource "aws_eks_pod_identity_association" "this" {
+      + association_arn      = (known after apply)
+      + association_id       = (known after apply)
+      + cluster_name         = "sandbox-liju"
+      + disable_session_tags = false
+      + external_id          = (known after apply)
+      + id                   = (known after apply)
+      + namespace            = "external-dns"
+      + region               = "ap-south-1"
+      + role_arn             = (known after apply)
+      + service_account      = "external-dns-sa"
+      + tags                 = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.external_dns_pod_identity.aws_iam_policy.external_dns[0] will be created
+  + resource "aws_iam_policy" "external_dns" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Permissions for External DNS"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "AmazonEKS_ExternalDNS-"
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = "route53:ChangeResourceRecordSets"
+                      + Effect   = "Allow"
+                      + Resource = "arn:aws:route53:::hostedzone/Z0080474WUGHDW1MOR4R"
+                    },
+                  + {
+                      + Action   = [
+                          + "route53:ListTagsForResources",
+                          + "route53:ListTagsForResource",
+                          + "route53:ListResourceRecordSets",
+                          + "route53:ListHostedZones",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all         = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+    }
+
+  # module.external_dns_pod_identity.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = [
+                          + "sts:TagSession",
+                          + "sts:AssumeRole",
+                        ]
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "pods.eks.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "liju-external-dns-"
+      + path                  = "/"
+      + tags                  = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + tags_all              = {
+          + "Environment" = "sandbox"
+          + "Team"        = "SRE"
+          + "Terraform"   = "true"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.external_dns_pod_identity.aws_iam_role_policy_attachment.external_dns[0] will be created
+  + resource "aws_iam_role_policy_attachment" "external_dns" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+Plan: 12 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+module.aws_lb_controller_pod_identity.aws_iam_role.this[0]: Creating...
+module.external_dns_pod_identity.aws_iam_policy.external_dns[0]: Creating...
+module.external_dns_pod_identity.aws_iam_role.this[0]: Creating...
+module.aws_lb_controller_pod_identity.aws_iam_policy.lb_controller[0]: Creating...
+module.cert_manager_pod_identity.aws_iam_role.this[0]: Creating...
+module.cert_manager_pod_identity.aws_iam_policy.cert_manager[0]: Creating...
+module.cert_manager_pod_identity.aws_iam_policy.cert_manager[0]: Creation complete after 2s [id=arn:aws:iam::056562102950:policy/AmazonEKS_CertManager-20260618144713319700000006]
+module.aws_lb_controller_pod_identity.aws_iam_policy.lb_controller[0]: Creation complete after 3s [id=arn:aws:iam::056562102950:policy/AmazonEKS_LoadBalancerController-20260618144713317900000005]
+module.external_dns_pod_identity.aws_iam_policy.external_dns[0]: Creation complete after 3s [id=arn:aws:iam::056562102950:policy/AmazonEKS_ExternalDNS-20260618144713317700000003]
+module.cert_manager_pod_identity.aws_iam_role.this[0]: Creation complete after 3s [id=liju-cert-manager-20260618144713317700000001]
+module.cert_manager_pod_identity.aws_iam_role_policy_attachment.cert_manager[0]: Creating...
+module.cert_manager_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"]: Creating...
+module.aws_lb_controller_pod_identity.aws_iam_role.this[0]: Creation complete after 3s [id=liju-aws-lbc-20260618144713317700000002]
+module.aws_lb_controller_pod_identity.aws_iam_role_policy_attachment.lb_controller[0]: Creating...
+module.aws_lb_controller_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"]: Creating...
+module.external_dns_pod_identity.aws_iam_role.this[0]: Creation complete after 3s [id=liju-external-dns-20260618144713317800000004]
+module.external_dns_pod_identity.aws_iam_role_policy_attachment.external_dns[0]: Creating...
+module.external_dns_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"]: Creating...
+module.cert_manager_pod_identity.aws_iam_role_policy_attachment.cert_manager[0]: Creation complete after 0s [id=liju-cert-manager-20260618144713317700000001/arn:aws:iam::056562102950:policy/AmazonEKS_CertManager-20260618144713319700000006]
+module.aws_lb_controller_pod_identity.aws_iam_role_policy_attachment.lb_controller[0]: Creation complete after 0s [id=liju-aws-lbc-20260618144713317700000002/arn:aws:iam::056562102950:policy/AmazonEKS_LoadBalancerController-20260618144713317900000005]
+module.external_dns_pod_identity.aws_iam_role_policy_attachment.external_dns[0]: Creation complete after 1s [id=liju-external-dns-20260618144713317800000004/arn:aws:iam::056562102950:policy/AmazonEKS_ExternalDNS-20260618144713317700000003]
+module.cert_manager_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"]: Creation complete after 1s [id=a-n5hxg0siizi3bsxt1]
+module.aws_lb_controller_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"]: Creation complete after 1s [id=a-lmdlhvrwmcafhgn6p]
+module.external_dns_pod_identity.aws_eks_pod_identity_association.this["sandbox-liju"]: Creation complete after 1s [id=a-2quwfwqkkr9x3i6ix]
+
+Apply complete! Resources: 12 added, 0 changed, 0 destroyed.

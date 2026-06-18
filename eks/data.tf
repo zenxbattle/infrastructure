@@ -27,3 +27,9 @@ data "aws_caller_identity" "current" {}
 data "aws_iam_role" "sso_administratoraccess" {
   name = "AWSReservedSSO_AdministratorAccess_1305a4c1e8802a15"
 }
+
+# hosted zone created in core/hosted_zone.tf, used by external-dns and cert-manager pod identities
+data "aws_route53_zone" "sandbox_liju_internal" {
+  name         = "sandbox-liju.internal"
+  private_zone = true
+}
