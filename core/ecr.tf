@@ -4,6 +4,7 @@ locals {
     "apigateway",
     "problemservice",
     "codeexecutionengine",
+    "frontend",
   ]
   github_org = "zenxbattle"
 }
