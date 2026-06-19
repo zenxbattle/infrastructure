@@ -69,3 +69,43 @@ resource "kubernetes_manifest" "common_nodeclass" {
     EOMANIFEST
   )
 }
+
+resource "kubernetes_manifest" "engine_nodeclass" {
+  depends_on = [helm_release.karpenter]
+
+  manifest = yamldecode(<<-EOMANIFEST
+    apiVersion: karpenter.k8s.aws/v1
+    kind: EC2NodeClass
+    metadata:
+      name: engine
+    spec:
+      amiSelectorTerms:
+        - alias: al2023@latest
+      role: ${module.karpenter.node_iam_role_name}
+      subnetSelectorTerms:
+        - tags:
+            private: "1"
+            kubernetes.io/cluster/sandbox-liju: "shared"
+      securityGroupSelectorTerms:
+        - id: ${module.eks.node_security_group_id}
+      associatePublicIPAddress: false
+      metadataOptions:
+        httpPutResponseHopLimit: 2
+      userData: |
+        MIME-Version: 1.0
+        Content-Type: multipart/mixed; boundary="BOUNDARY"
+
+        --BOUNDARY
+        Content-Type: text/x-shellscript; charset="us-ascii"
+
+        #!/bin/bash
+        set -ex
+        dnf install -y docker
+        systemctl enable docker
+        systemctl start docker
+        --BOUNDARY--
+      tags:
+        karpenter.sh/nodeclass: engine
+    EOMANIFEST
+  )
+}
