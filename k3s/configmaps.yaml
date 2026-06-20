@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: xcode-config
-  namespace: xcode
+  name: zenxbattle-config
+  namespace: zenxbattle
 data:
   ENVIRONMENT: "production"
   APIGATEWAYPORT: "7000"
-  FRONTENDURL: "http://xcode.local"
-  APPURL: "http://xcode.local"
+  FRONTENDURL: "http://zenxbattle.local"
+  APPURL: "http://zenxbattle.local"
   USERGRPCURL: "auth-user-service:50051"
   PROBLEMGRPCURL: "problems-service:50055"
   CHALLENGEGRPCSERVICEPORT: "50057"
@@ -15,10 +15,10 @@ data:
   NATSURL: "nats://nats:4222"
   REDISURL: "redis:6379"
   MONGODBURL: "mongodb://mongo:27017"
-  POSTGRESDSN: "host=postgres port=5432 user=admin password=password dbname=xcode sslmode=disable"
-  PSQLURL: "host=postgres port=5432 user=admin password=password dbname=xcode sslmode=disable"
+  POSTGRESDSN: "host=postgres port=5432 user=admin password=password dbname=zenxbattle sslmode=disable"
+  PSQLURL: "host=postgres port=5432 user=admin password=password dbname=zenxbattle sslmode=disable"
   MONGOURL: "mongodb://mongo:27017"
-  SESSIONSECRETKEY: "xcode-session-secret-k3s"
+  SESSIONSECRETKEY: "zenxbattle-session-secret-k3s"
   APIGATEWAYTOKENCHECKURL: "http://api-gateway:7000/api/v1/users/check-token"
   RATE_LIMIT: "5"
   RATE_LIMIT_BURST: "15"

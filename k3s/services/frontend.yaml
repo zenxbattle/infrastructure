@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: xcode
+  namespace: zenxbattle
 spec:
   replicas: 1
   selector:
@@ -16,12 +16,12 @@ spec:
       containers:
       - name: frontend
         image: lijuthomas/zenx2-frontend:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         env:
         - name: VITE_API_BASE_URL
-          value: "http://xcode.local"
+          value: "http://zenxbattle.local"
         resources:
           requests:
             memory: "64Mi"
@@ -34,7 +34,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
-  namespace: xcode
+  namespace: zenxbattle
 spec:
   selector:
     app: frontend

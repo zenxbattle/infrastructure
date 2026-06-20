@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: code-engine
-  namespace: xcode
+  namespace: zenxbattle
 spec:
   replicas: 1
   selector:
@@ -16,12 +16,12 @@ spec:
       containers:
       - name: code-engine
         image: lijuthomas/code-engine:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         envFrom:
         - configMapRef:
-            name: xcode-config
+            name: zenxbattle-config
         - secretRef:
-            name: xcode-secrets
+            name: zenxbattle-secrets
         env:
         - name: NATSURL
           value: "nats://nats:4222"
@@ -44,7 +44,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: code-engine
-  namespace: xcode
+  namespace: zenxbattle
 spec:
   selector:
     app: code-engine

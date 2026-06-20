@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: problems-service
-  namespace: xcode
+  namespace: zenxbattle
 spec:
   replicas: 1
   selector:
@@ -16,14 +16,14 @@ spec:
       containers:
       - name: problems-service
         image: lijuthomas/problems-service:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 50055
         envFrom:
         - configMapRef:
-            name: xcode-config
+            name: zenxbattle-config
         - secretRef:
-            name: xcode-secrets
+            name: zenxbattle-secrets
         env:
         - name: PROBLEMGRPCPORT
           value: "50055"
@@ -39,7 +39,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: problems-service
-  namespace: xcode
+  namespace: zenxbattle
 spec:
   selector:
     app: problems-service
