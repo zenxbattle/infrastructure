@@ -1,0 +1,49 @@
+7337
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: problems-service
+  namespace: xcode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: problems-service
+  template:
+    metadata:
+      labels:
+        app: problems-service
+    spec:
+      containers:
+      - name: problems-service
+        image: lijuthomas/problems-service:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 50055
+        envFrom:
+        - configMapRef:
+            name: xcode-config
+        - secretRef:
+            name: xcode-secrets
+        env:
+        - name: PROBLEMGRPCPORT
+          value: "50055"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: problems-service
+  namespace: xcode
+spec:
+  selector:
+    app: problems-service
+  ports:
+  - port: 50055
+    targetPort: 50055

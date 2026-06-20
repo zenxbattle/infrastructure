@@ -1,0 +1,49 @@
+7337
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-user-service
+  namespace: xcode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-user-service
+  template:
+    metadata:
+      labels:
+        app: auth-user-service
+    spec:
+      containers:
+      - name: auth-user-service
+        image: lijuthomas/auth-user-service:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 50051
+        envFrom:
+        - configMapRef:
+            name: xcode-config
+        - secretRef:
+            name: xcode-secrets
+        env:
+        - name: USERGRPCPORT
+          value: "50051"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-user-service
+  namespace: xcode
+spec:
+  selector:
+    app: auth-user-service
+  ports:
+  - port: 50051
+    targetPort: 50051

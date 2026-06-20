@@ -1,0 +1,23 @@
+7337
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: xcode
+
+resources:
+- namespace.yaml
+- configmaps.yaml
+- secrets.yaml
+- storage/pvcs.yaml
+- infra/nats.yaml
+- infra/postgres.yaml
+- infra/mongodb.yaml
+- infra/redis.yaml
+- services/api-gateway.yaml
+- services/auth-user-service.yaml
+- services/problems-service.yaml
+- services/challenge-manager.yaml
+- services/code-engine.yaml
+- services/frontend.yaml
+- monitoring/prometheus.yaml
+- monitoring/grafana.yaml
+- ingress.yaml
