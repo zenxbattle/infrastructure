@@ -1,4 +1,3 @@
-7337
 # XCODE on k3s — On-Premises Deployment
 
 Zero AWS dependencies. Everything runs on k3s locally.

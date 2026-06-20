@@ -1,4 +1,3 @@
-7337
 #!/bin/bash
 # Deploy XCODE on k3s — zero AWS, all on-prem
 set -e
