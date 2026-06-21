@@ -1,9 +1,0 @@
-#!/bin/bash
-set -e
-cd "$(dirname "$0")"
-echo "=== ZenXBattle Deploy ==="
-ansible-playbook -i ansible/inventory.yml ansible/playbook.yml
-echo "=== Done ==="
-echo "Frontend: http://localhost:8082/"
-echo "Grafana:  http://localhost:8082/grafana (admin/admin)"
-echo "ArgoCD:   http://localhost:8082/argocd (admin: see kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d)"
