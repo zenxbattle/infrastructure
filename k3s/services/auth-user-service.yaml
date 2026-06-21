@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: auth-user-service
-        image: lijuthomas/auth-user-service:latest
+        image: lijuthomas/auth-user-service:amd64
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 50051

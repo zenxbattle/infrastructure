@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: challenge-manager
-        image: lijuthomas/challenge-manager:latest
+        image: lijuthomas/challenge-manager:amd64
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 7777

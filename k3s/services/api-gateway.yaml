@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: lijuthomas/api-gateway:latest
+        image: lijuthomas/api-gateway:amd64
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 7000

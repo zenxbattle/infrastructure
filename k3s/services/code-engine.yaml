@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: code-engine
-        image: lijuthomas/code-engine:latest
+        image: lijuthomas/code-engine:amd64
         imagePullPolicy: IfNotPresent
         envFrom:
         - configMapRef:

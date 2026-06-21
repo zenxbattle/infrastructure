@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: problems-service
-        image: lijuthomas/problems-service:latest
+        image: lijuthomas/problems-service:amd64
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 50055
