@@ -1,0 +1,126 @@
+---
+- name: ZenXBattle — Declarative On-Prem Deployment
+  hosts: fedora
+  become: yes
+  vars:
+    namespace: zenxbattle
+    deploy_dir: /home/zenx/zenxbattle/infrastructure/k3s
+    service_repos:
+      - { name: api-gateway, dir: ApiGateway, dockerfile: Dockerfile }
+      - { name: auth-user-service, dir: AuthUserAdminService, dockerfile: Dockerfile }
+      - { name: problems-service, dir: ProblemService, dockerfile: Dockerfile }
+      - { name: challenge-manager, dir: ChallengeService, dockerfile: Dockerfile }
+      - { name: code-engine, dir: CodeExecutionEngine, dockerfile: Dockerfile }
+      - { name: frontend, dir: Frontend, dockerfile: Dockerfile }
+    infra_images: [nats:2.10-alpine, postgres:16-alpine, mongo:7, redis:7-alpine, prom/prometheus:latest, grafana/grafana:latest]
+    k3s_config: /home/zenx/.kube/config
+
+  tasks:
+    - name: Ensure k3s is running
+      systemd:
+        name: k3s
+        state: started
+        enabled: yes
+
+    - name: Wait for k3s to be ready
+      command: k3s kubectl get nodes
+      register: k3s_ready
+      retries: 30
+      delay: 2
+      until: k3s_ready.rc == 0
+
+    - name: Copy kubeconfig for zenx
+      copy:
+        src: /etc/rancher/k3s/k3s.yaml
+        dest: "{{ k3s_config }}"
+        remote_src: yes
+        owner: zenx
+        group: zenx
+        mode: '0600'
+
+    - name: Update kubeconfig server IP
+      replace:
+        path: "{{ k3s_config }}"
+        regexp: '127\.0\.0\.1'
+        replace: '192.168.10.129'
+
+    - name: Pull infra images
+      docker_image:
+        name: "{{ item }}"
+        source: pull
+      loop: "{{ infra_images }}"
+
+    - name: Build application images
+      docker_image:
+        name: "lijuthomas/{{ item.name }}"
+        tag: amd64
+        source: build
+        build:
+          path: "/home/zenx/zenxbattle/{{ item.dir }}"
+          dockerfile: "{{ item.dockerfile }}"
+          platform: linux/amd64
+      loop: "{{ service_repos }}"
+
+    - name: Build worker image
+      docker_image:
+        name: lijuthomas/zenxbattle-engine-worker
+        tag: latest
+        source: build
+        build:
+          path: /home/zenx/zenxbattle/CodeExecutionEngine
+          dockerfile: Dockerfile.worker
+          platform: linux/amd64
+
+    - name: Import images into k3s containerd
+      shell: |
+        for img in api-gateway auth-user-service problems-service challenge-manager code-engine; do
+          docker save "lijuthomas/${img}:amd64" | k3s ctr images import - 2>/dev/null
+        done
+        docker save "lijuthomas/frontend:amd64" | k3s ctr images import - 2>/dev/null
+        docker save "lijuthomas/zenxbattle-engine-worker:latest" | k3s ctr images import - 2>/dev/null
+
+    - name: Apply k3s manifests
+      command: kubectl apply -k "{{ deploy_dir }}"
+      environment:
+        KUBECONFIG: "{{ k3s_config }}"
+
+    - name: Create zenxbattle-env ConfigMap
+      kubernetes.core.k8s:
+        kubeconfig: "{{ k3s_config }}"
+        state: present
+        definition:
+          apiVersion: v1
+          kind: ConfigMap
+          metadata:
+            name: zenxbattle-env
+            namespace: "{{ namespace }}"
+          data:
+            .env: |
+              ENVIRONMENT=production
+              CHALLENGEGRPCPORT=50057
+              CHALLENGEHTTPPORT=7777
+              PSQLURL=host=postgres port=5432 user=admin password=password dbname=zenxbattle sslmode=disable
+              MONGOURL=mongodb://root:password@mongo:27017
+              SESSIONSECRETKEY=zenxbattle-session
+              REDISURL=redis:6379
+              REDISPASSWORD=
+              REDISDB=0
+              APIGATEWAYTOKENCHECKURL=http://api-gateway:7000/api/v1/users/check-token
+              JWTSECRET=zenxbattle-jwt
+
+    - name: Wait for all pods to be ready
+      command: kubectl wait --for=condition=Ready pods --all -n "{{ namespace }}" --timeout=300s
+      environment:
+        KUBECONFIG: "{{ k3s_config }}"
+
+    - name: Configure nginx reverse proxy
+      template:
+        src: nginx.j2
+        dest: /etc/nginx/conf.d/zenxbattle.conf
+      notify: reload nginx
+
+  handlers:
+    - name: reload nginx
+      systemd:
+        name: nginx
+        state: reloaded

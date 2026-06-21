@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: zenxbattle
+  namespace: argocd
+spec:
+  sourceRepos:
+  - "*"
+  destinations:
+  - namespace: zenxbattle
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: "*"
+    kind: "*"
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: zenxbattle
+  namespace: argocd
+spec:
+  project: zenxbattle
+  source:
+    repoURL: https://github.com/zenxbattle/infrastructure.git
+    targetRevision: k3s
+    path: k3s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: zenxbattle
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
