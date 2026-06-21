@@ -1,35 +1,92 @@
 ---
-- name: ZenXBattle — Declarative On-Prem Deployment
+- name: ZenXBattle — Declarative On-Prem K3s Deployment
   hosts: fedora
   become: yes
   vars:
     namespace: zenxbattle
     deploy_dir: /home/zenx/zenxbattle/infrastructure/k3s
-    service_repos:
-      - { name: api-gateway, dir: ApiGateway, dockerfile: Dockerfile }
-      - { name: auth-user-service, dir: AuthUserAdminService, dockerfile: Dockerfile }
-      - { name: problems-service, dir: ProblemService, dockerfile: Dockerfile }
-      - { name: challenge-manager, dir: ChallengeService, dockerfile: Dockerfile }
-      - { name: code-engine, dir: CodeExecutionEngine, dockerfile: Dockerfile }
-      - { name: frontend, dir: Frontend, dockerfile: Dockerfile }
-    infra_images: [nats:2.10-alpine, postgres:16-alpine, mongo:7, redis:7-alpine, prom/prometheus:latest, grafana/grafana:latest]
+    source_root: /home/zenx/zenxbattle
     k3s_config: /home/zenx/.kube/config
+    local_ip: "192.168.10.129"
+    registry: "lijuthomas"
+    tag: "amd64"
 
+    service_repos:
+      - { name: api-gateway,        dir: ApiGateway }
+      - { name: auth-user-service,   dir: AuthUserAdminService }
+      - { name: problems-service,    dir: ProblemService }
+      - { name: challenge-manager,   dir: ChallengeService }
+      - { name: code-engine,         dir: CodeExecutionEngine }
+      - { name: frontend,            dir: Frontend }
+
+    infra_images:
+      - "nats:2.10-alpine"
+      - "postgres:16-alpine"
+      - "mongo:7"
+      - "redis:7-alpine"
+      - "prom/prometheus:latest"
+      - "grafana/grafana:latest"
+
+  # ========================================================================
+  # PRE-FLIGHT CHECKS
+  # ========================================================================
   tasks:
-    - name: Ensure k3s is running
+    - name: Verify Docker is installed
+      command: docker --version
+      register: _docker_check
+      failed_when: _docker_check.rc != 0
+      changed_when: false
+
+    - name: Verify k3s is installed
+      command: k3s --version
+      register: _k3s_check
+      failed_when: _k3s_check.rc != 0
+      changed_when: false
+
+    - name: Verify kubectl available
+      command: kubectl version --client --short
+      register: _kubectl_check
+      failed_when: _kubectl_check.rc != 0
+      changed_when: false
+
+    # ========================================================================
+    # HOST SETUP — /etc/hosts for service discovery
+    # ========================================================================
+    - name: Ensure /etc/hosts has local service entries
+      lineinfile:
+        path: /etc/hosts
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+        state: present
+        owner: root
+        group: root
+        mode: '0644'
+      loop:
+        - { regexp: "^{{ local_ip }}.*xcode.local", line: "{{ local_ip }} xcode.local" }
+        - { regexp: "^{{ local_ip }}.*api.xcode.local", line: "{{ local_ip }} api.xcode.local" }
+        - { regexp: "^{{ local_ip }}.*postgres", line: "{{ local_ip }} postgres" }
+        - { regexp: "^{{ local_ip }}.*mongo", line: "{{ local_ip }} mongo" }
+        - { regexp: "^{{ local_ip }}.*redis", line: "{{ local_ip }} redis" }
+        - { regexp: "^{{ local_ip }}.*nats", line: "{{ local_ip }} nats" }
+
+    # ========================================================================
+    # K3S — ensure running + kubeconfig
+    # ========================================================================
+    - name: Ensure k3s running
       systemd:
         name: k3s
         state: started
         enabled: yes
 
-    - name: Wait for k3s to be ready
+    - name: Wait for k3s API
       command: k3s kubectl get nodes
-      register: k3s_ready
+      register: _k3s_ready
       retries: 30
       delay: 2
-      until: k3s_ready.rc == 0
+      until: _k3s_ready.rc == 0
+      changed_when: false
 
-    - name: Copy kubeconfig for zenx
+    - name: Copy kubeconfig to zenx user
       copy:
         src: /etc/rancher/k3s/k3s.yaml
         dest: "{{ k3s_config }}"
@@ -38,52 +95,87 @@
         group: zenx
         mode: '0600'
 
-    - name: Update kubeconfig server IP
+    - name: Set kubeconfig server IP
       replace:
         path: "{{ k3s_config }}"
         regexp: '127\.0\.0\.1'
-        replace: '192.168.10.129'
+        replace: "{{ local_ip }}"
 
-    - name: Pull infra images
+    - name: Create zenxbattle namespace
+      kubernetes.core.k8s:
+        kubeconfig: "{{ k3s_config }}"
+        state: present
+        definition:
+          apiVersion: v1
+          kind: Namespace
+          metadata:
+            name: "{{ namespace }}"
+
+    # ========================================================================
+    # IMAGES — build application images
+    # ========================================================================
+    - name: Pull infrastructure images
       docker_image:
         name: "{{ item }}"
         source: pull
       loop: "{{ infra_images }}"
 
-    - name: Build application images
+    - name: Build service images
       docker_image:
-        name: "lijuthomas/{{ item.name }}"
-        tag: amd64
+        name: "{{ registry }}/{{ item.name }}"
+        tag: "{{ tag }}"
         source: build
         build:
-          path: "/home/zenx/zenxbattle/{{ item.dir }}"
-          dockerfile: "{{ item.dockerfile }}"
+          path: "{{ source_root }}/{{ item.dir }}"
+          dockerfile: "{{ item.dir }}/Dockerfile"
           platform: linux/amd64
       loop: "{{ service_repos }}"
 
     - name: Build worker image
       docker_image:
-        name: lijuthomas/zenxbattle-engine-worker
+        name: "{{ registry }}/zenxbattle-engine-worker"
         tag: latest
         source: build
         build:
-          path: /home/zenx/zenxbattle/CodeExecutionEngine
-          dockerfile: Dockerfile.worker
+          path: "{{ source_root }}/CodeExecutionEngine"
+          dockerfile: "{{ source_root }}/CodeExecutionEngine/Dockerfile.worker"
           platform: linux/amd64
 
-    - name: Import images into k3s containerd
-      shell: |
-        for img in api-gateway auth-user-service problems-service challenge-manager code-engine; do
-          docker save "lijuthomas/${img}:amd64" | k3s ctr images import - 2>/dev/null
-        done
-        docker save "lijuthomas/frontend:amd64" | k3s ctr images import - 2>/dev/null
-        docker save "lijuthomas/zenxbattle-engine-worker:latest" | k3s ctr images import - 2>/dev/null
+    # ========================================================================
+    # IMAGE IMPORT — declarative import into k3s containerd
+    # ========================================================================
+    # Only import if the image is NOT already present in k3s containerd.
+    # The `docker save | k3s ctr images import` pipe runs ONLY on changed images.
+    - name: Check which images already exist in k3s containerd
+      command: k3s ctr images ls -q
+      register: _k3s_images
+      changed_when: false
 
-    - name: Apply k3s manifests
-      command: kubectl apply -k "{{ deploy_dir }}"
-      environment:
-        KUBECONFIG: "{{ k3s_config }}"
+    - name: Import app images into k3s containerd (only if missing)
+      shell: >
+        docker save "{{ registry }}/{{ item.name }}:{{ tag }}" |
+        k3s ctr images import -
+      loop: "{{ service_repos }}"
+      when: "registry + '/' + item.name not in _k3s_images.stdout"
+      changed_when: true
 
+    - name: Import worker image into k3s containerd (only if missing)
+      shell: >
+        docker save "{{ registry }}/zenxbattle-engine-worker:latest" |
+        k3s ctr images import -
+      when: "registry + '/zenxbattle-engine-worker' not in _k3s_images.stdout"
+      changed_when: true
+
+    - name: Import frontend image into k3s containerd (only if missing)
+      shell: >
+        docker save "{{ registry }}/frontend:{{ tag }}" |
+        k3s ctr images import -
+      when: "registry + '/frontend' not in _k3s_images.stdout"
+      changed_when: true
+
+    # ========================================================================
+    # SECRETS — zenxbattle-env ConfigMap
+    # ========================================================================
     - name: Create zenxbattle-env ConfigMap
       kubernetes.core.k8s:
         kubeconfig: "{{ k3s_config }}"
@@ -99,7 +191,7 @@
               ENVIRONMENT=production
               CHALLENGEGRPCPORT=50057
               CHALLENGEHTTPPORT=7777
-              PSQLURL=host=postgres port=5432 user=admin password=password dbname=zenxbattle sslmode=disable
+              PSQLURL=host=postgres port=5432 user=admin password=admin dbname=zenxbattle sslmode=disable
               MONGOURL=mongodb://root:password@mongo:27017
               SESSIONSECRETKEY=zenxbattle-session
               REDISURL=redis:6379
@@ -108,19 +200,50 @@
               APIGATEWAYTOKENCHECKURL=http://api-gateway:7000/api/v1/users/check-token
               JWTSECRET=zenxbattle-jwt
 
-    - name: Wait for all pods to be ready
+    # ========================================================================
+    # DEPLOY — apply kustomize manifests
+    # ========================================================================
+    - name: Apply K3s kustomize manifests (kustomization.yaml)
+      command: kubectl apply -k "{{ deploy_dir }}"
+      environment:
+        KUBECONFIG: "{{ k3s_config }}"
+      register: _apply
+      changed_when: "'configured' in _apply.stdout or 'created' in _apply.stdout"
+
+    # ========================================================================
+    # HEALTH — wait for all pods
+    # ========================================================================
+    - name: Wait for all pods to become Ready
       command: kubectl wait --for=condition=Ready pods --all -n "{{ namespace }}" --timeout=300s
       environment:
         KUBECONFIG: "{{ k3s_config }}"
+      changed_when: false
+      ignore_errors: yes
 
-    - name: Configure nginx reverse proxy
-      template:
-        src: nginx.j2
-        dest: /etc/nginx/conf.d/zenxbattle.conf
-      notify: reload nginx
+    - name: Show final pod status
+      command: kubectl get pods -n "{{ namespace }}" -o wide
+      environment:
+        KUBECONFIG: "{{ k3s_config }}"
+      register: _pods
+      changed_when: false
 
+    - name: Print deployment summary
+      debug:
+        msg:
+          - "=============================================="
+          - "  ZenXBattle Deployed"
+          - "=============================================="
+          - "Namespace: {{ namespace }}"
+          - "ConfigMap:  zenxbattle-env"
+          - "Kubeconfig: {{ k3s_config }}"
+          - "{{ _pods.stdout }}"
+          - "=============================================="
+
+  # ========================================================================
+  # HANDLERS — reload nginx when ConfigMap / pods change
+  # ========================================================================
   handlers:
-    - name: reload nginx
+    - name: Reload nginx
       systemd:
         name: nginx
         state: reloaded
